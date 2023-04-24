@@ -20,7 +20,7 @@
 <body>
   <!-- Navbar -->
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="nav-content">
          <a href="index.html" class="logo">Goose</a>
          <ul class="nav-ul">
@@ -29,6 +29,11 @@
            <a href="pages/about.html"><li>About</li></a>
            <a href="pages/contact.html"><li>Contact</li></a>
         </ul>
+      </div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
     </nav>
   </header>
@@ -62,6 +67,35 @@
   </main>
   
   <!-- Footer -->
-  <footer></footer>
+  <footer>
+    <div class="footer-content">
+      <div class="newsletter">
+        <div class="news-sub">
+          <p class="sub-one">Subscribe to our newsletter!</p>
+          <p class="sub-two">Get our latest posts and news!</p>
+        </div>
+        <form class="news-form">
+          <label for="newsletter" aria-label="newsletter"></label>
+          <input name="newsletter" id="newsletter" placeholder="Enter your email" class="news-input">
+          <button class="news-button">Subscribe</button>
+        </form>
+      </div>
+      <div class="social-flex">
+        <div class="footer-social">
+          <i class="fa-brands fa-twitter fa-2x"></i>
+          <i class="fa-brands fa-facebook fa-2x"></i>
+          <i class="fa-brands fa-instagram fa-2x"></i>
+        </div>
+        <div class="brand">GOOSE</div>
+      </div>
+      <div class="footer-nav">
+        <ul>
+          <a href="pages/contact.html" class="footer-link"><li>Contact</li></a>
+          <a href="pages/about.html" class="footer-link"><li>About Us</li></a>
+        </ul>
+        <div class="author">@Jakob Tidemand 2023</div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
