@@ -1,0 +1,79 @@
+/* Table of contents
+
+  1. To top button
+  2. Carousel
+
+*/
+
+/* To top button */
+
+.to-top-btn {
+  background-color: var(--clr-pink);
+  position: fixed;
+  bottom: 100px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-white);
+  pointer-events: none;
+  opacity: 0;
+  transition: all .4s;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.to-top-btn.active {
+  bottom: 200px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Carousel */
+
+.carousel-img-container {
+  position: relative;
+}
+
+.carousel-image {
+  object-fit: cover;
+  height: 500px;
+  width: 76em;
+}
+
+.carousel-img-tag {
+  position: absolute;
+  top: 85%;
+  left: 8%;
+  padding: 0.8em 1.6em;
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-pink);
+}
+
+.carousel-info-container {
+  background-color: var(--clr-grey);
+  color: var(--clr-white);
+  height: 260px;
+  margin-bottom: 10em;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  width: 56em;
+  margin: auto;
+  gap: 1em;
+}
+
+.carousel-h2 {
+  font-size: 3rem;
+  margin-top: 1em;
+}
+
+.carousel-date {
+  margin-top: 1.7em;
+}
+

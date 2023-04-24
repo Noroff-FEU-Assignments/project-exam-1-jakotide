@@ -1,0 +1,156 @@
+/* Imports */
+
+@import url(components.css);
+
+/* Custom Properties */
+
+:root {
+  --clr-darkgrey:#43403D;
+  --clr-grey: #545352;
+  --clr-white: #fff;
+  --clr-yellow: #F6F193;
+  --clr-blue: #65A4BA;
+  --clr-green: #39C5AF;
+  --clr-pink: #F1ABB9;
+
+  --ff-main: 'Josefin Sans', sans-serif;
+  --ff-sec: 'Playfair Display', serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-xbold: 800;
+}
+
+/* CSS RESET */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-main);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+  background-color: var(--clr-darkgrey);
+  letter-spacing: 0.11em;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* NAVBAR */
+
+nav {
+  background-color: var(--clr-grey);
+  color: var(--clr-white);
+  height: 5em;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.nav-content {
+  max-width: 50em;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 1.5em 1em 0.1em;
+  border-bottom: var(--clr-yellow) solid 1px;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 3em;
+  font-weight: var(--fw-regular);
+}
+
+.nav-ul li {
+  color: var(--clr-white);
+}
+
+li {
+  list-style: none;
+}
+
+.logo {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  font-size: 1.4rem;
+}
+
+.nav-ul .active {
+  color: var(--clr-yellow);
+}
+
+/* Header */
+
+main {
+  max-width: 76em;
+  margin: auto;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  max-width: 76em;
+  margin: auto;
+  margin-top: 5em;
+}
+
+h1 {
+  color: var(--clr-white);
+  font-size: 6rem;
+}
+
+.main-header p {
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+  font-size: 1.4rem;
+  max-width: 22em;
+  margin: 0 0 0 1.2em;
+  line-height: 1em;
+}
+
+.latest {
+  color: var(--clr-white);
+  margin: 1.5em 0 0.4em 0.4em;
+}
+
+/* Trending grid */
+
+.trending-header {
+  color: var(--clr-white);
+  height: 1500px;
+}
