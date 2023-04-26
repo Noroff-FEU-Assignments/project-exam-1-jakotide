@@ -32,6 +32,16 @@
   pointer-events: auto;
 }
 
+@media (max-width: 84em){
+  .to-top-btn {
+    right: 0;
+  }
+
+  .to-top-btn.active {
+    bottom: 70px;
+  }
+}
+
 /* Carousel */
 
 .carousel-img-container {

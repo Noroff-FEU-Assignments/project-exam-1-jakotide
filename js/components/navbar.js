@@ -1,5 +1,8 @@
 const navBar = document.querySelector(".navbar");
 const navContent = document.querySelector(".nav-content");
+const navMenu = document.querySelector(".nav-ul");
+const hamburger = document.querySelector(".hamburger");
+// const bars = document.querySelector(".bar");
 
 export function navScroll(){
   document.addEventListener("scroll", () => {
@@ -10,6 +13,13 @@ export function navScroll(){
       navBar.classList.remove("navbar-scrolled");
       navContent.classList.remove("nav-content-scrolled");
     }
+  })
+};
+
+export function hamburgerClicked(){
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   })
 };
 

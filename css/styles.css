@@ -122,8 +122,9 @@ li {
   font-size: 1.4rem;
 }
 
-.nav-ul .active {
+.nav-ul li.active {
   color: var(--clr-yellow);
+  left: 0;
 }
 
 .hamburger {
@@ -131,9 +132,33 @@ li {
   cursor: pointer;
 }
 
+.bar {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-color: var(--clr-white);
+}
+
 /* Media query Navbar */
 
-@media (max-width: 870px) {
+@media (max-width: 54em) {
+
+  .nav-content {
+    border-bottom: none;
+  }
+  .nav-content::before {
+    content: "";
+    position: absolute;
+    left: 40%;
+    bottom: 50%;
+    width: 25%;
+    border-bottom: 1px solid var(--clr-yellow);
+    
+  }
+
   .hamburger {
     display: block;
     padding-right: 1rem;
@@ -155,17 +180,19 @@ li {
   .nav-ul {
     position: fixed;
     left: -100%; 
-    top:64px;
-    gap: 2px;
+    top:80px;
+    gap: 2em;
     flex-direction: column;
-    background-color: var(--clr-green);
+    background-color: var(--clr-grey);
     width: 50%;
     text-align: left;
     transition: 0.3s;
     z-index: 55;
     padding-right: 0;
+    height: 100vh;
+    padding: 1em 0 0 1em;
+    
   }
-
 
 }
 
@@ -181,7 +208,7 @@ main {
   align-items: center;
   max-width: 76em;
   margin: auto;
-  margin-top: 5em;
+  margin-top: 8em;
 }
 
 h1 {
@@ -201,6 +228,85 @@ h1 {
 .latest {
   color: var(--clr-white);
   margin: 1.5em 0 0.4em 0.4em;
+}
+
+.header-circles {
+  z-index: -3;
+  position: absolute;
+  left: 80%;
+}
+
+svg {
+  position: absolute;
+  top: 105%;
+  left: 60%;
+  mix-blend-mode: difference;
+  color: var(--clr-yellow);
+}
+
+@media (max-width: 81.25em){
+
+  .main-header {
+    max-width: 60em; 
+  }
+
+  h1 {
+    font-size: 4.6rem;
+    margin-left: 2rem;
+  }
+
+  .main-header p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 62em){
+  .main-header {
+    max-width: 44em; 
+  }
+
+  h1 {
+    font-size: 3.8rem;
+  }
+
+  .main-header p {
+    font-size: 1rem;
+    margin-right: 1em;
+  }
+
+  .header-circles {
+    width: 7rem;
+  }
+}
+
+@media (max-width: 37.5em){
+    
+    .main-header {
+      flex-direction: column;
+      align-items: baseline;
+      margin: 7em 0 4em 1.5em;
+    }
+
+    h1 {
+      font-size: 3.4rem;
+      margin-left: 0px;
+    }
+
+    .main-header p {
+      font-size: 0.9rem;
+    }
+
+    .header-circles {
+      width: 6.5rem;
+      left: 72%;
+    }
+}
+
+@media (max-width: 30em){
+  .header-circles {
+    width: 6.2rem;
+    left: 70%;
+  }
 }
 
 /* Trending grid */
@@ -254,6 +360,7 @@ footer {
   height: 4.625rem;
   font-size: 1.4rem;
   padding-left: 10px;
+  margin-bottom: 20px;
 }
 
 .news-button {
@@ -287,6 +394,136 @@ footer {
 .footer-nav,
 .newsletter {
   align-items: center;
+}
+
+/* Footer Media Queries */
+
+@media (max-width: 81em){
+
+  .footer-content {
+    max-width: 62em;
+  }
+
+  .sub-one {
+    font-size: 1.75rem;
+  }
+  
+  .sub-two,
+  .brand {
+    font-size: 1.3rem;
+    margin-bottom: 1em;
+  }
+
+  .news-input {
+    width: 24.25rem;
+    height: 4.2rem;
+    font-size: 1rem;
+  }
+
+  .news-button {
+    height: 4.2rem;
+    font-size: 1rem;
+    width: 9rem;
+  }
+
+}
+
+@media (max-width: 65.625em){
+
+    .footer-content {
+      max-width: 40em;
+    }
+
+    .newsletter {
+      flex-direction: column;
+    }
+
+    .news-input {
+      width: 24.25rem;
+      height: 4.2rem;
+      font-size: 1rem;
+    }
+  
+    .news-button {
+      height: 4.2rem;
+      font-size: 1rem;
+      width: 9rem;
+    }
+}
+
+@media (max-width: 42em){
+
+  .footer-content {
+    max-width: 30em;
+    padding-top: 2.5em;
+  }
+
+  .sub-one {
+    font-size: 1.5rem;
+  }
+  
+  .sub-two,
+  .brand {
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+  }
+
+  .news-input {
+    width: 18rem;
+    height: 3.5rem;
+    font-size: 1rem;
+  }
+
+  .news-button {
+    height: 3.5rem;
+    font-size: 1rem;
+    width: 7rem;
+  }
+
+}
+
+@media (max-width: 31.25em){
+
+  .footer-content {
+    max-width: 20em;
+  }
+
+  .sub-one {
+    font-size: 1.2rem;
+  }
+  
+  .sub-two,
+  .brand {
+    font-size: 0.9rem;
+    margin-bottom: 1em;
+  }
+
+  .news-input {
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1rem;
+  }
+
+  .news-button {
+    height: 3.5rem;
+    font-size: 1rem;
+    width: 7rem;
+  }
+
+  .social-flex {
+    width: 18em;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+  }
+
+  .footer-nav ul {
+    gap: 2.5em;
+    margin: 1.3em 0 2.5em;
+  }
 }
 
 

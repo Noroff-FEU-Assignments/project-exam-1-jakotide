@@ -1,4 +1,4 @@
-const baseUrl = "https://wordpress.tidemand-goose.no/wp-json/wp/v2/posts?_embed=1&orderby=date&order=desc";
+const baseUrl = "https://wordpress.tidemand-goose.no/wp-json/wp/v2/posts?_embed";
 const embeded = `?_embeded`;
 const url = baseUrl + embeded + `&per_page=50`;
 
