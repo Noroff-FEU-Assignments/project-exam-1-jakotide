@@ -122,9 +122,12 @@ li {
   font-size: 1.4rem;
 }
 
+.nav-ul.active {
+  left: 0;
+}
+
 .nav-ul li.active {
   color: var(--clr-yellow);
-  left: 0;
 }
 
 .hamburger {
@@ -156,7 +159,6 @@ li {
     bottom: 50%;
     width: 25%;
     border-bottom: 1px solid var(--clr-yellow);
-    
   }
 
   .hamburger {
@@ -190,10 +192,8 @@ li {
     z-index: 55;
     padding-right: 0;
     height: 100vh;
-    padding: 1em 0 0 1em;
-    
+    padding: 1em 0 0 1em; 
   }
-
 }
 
 /* Header */
