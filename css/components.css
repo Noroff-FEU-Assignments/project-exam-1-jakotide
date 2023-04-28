@@ -49,6 +49,7 @@
   max-width: 76em;
   width: 100%;
   position: relative;
+
 }
 
 .wrapper .carousel {
@@ -57,6 +58,7 @@
   grid-auto-columns: calc(100% / 1);
   overflow: hidden;
   scroll-behavior: smooth;
+
 }
 
 .carousel {

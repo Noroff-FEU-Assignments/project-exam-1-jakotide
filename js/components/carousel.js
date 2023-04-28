@@ -1,6 +1,7 @@
 const carousel = document.querySelector(".carousel");
 const arrowButtons = document.querySelectorAll(".wrapper i");
 const firstCardWidth = document.querySelector(".card").offsetWidth;
+// const firstCardWidth = "76em";
 const carouselChildrens = [...carousel.children];
 
 let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
@@ -18,6 +19,7 @@ carouselChildrens.slice(0, cardPerView).forEach(card => {
 export function arrowClick(){
     arrowButtons.forEach(btn => {
       btn.addEventListener("click", () => {
+        console.log("YO")
         carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
       })
     })
@@ -51,8 +53,6 @@ autoPlay();
 carousel.addEventListener("scroll", infiniteScroll);
 carousel.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 carousel.addEventListener("mouseleave", autoPlay);
-
-
 
 
 
