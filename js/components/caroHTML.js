@@ -1,150 +1,185 @@
-// const baseUrl = "https://wordpress.tidemand-goose.no/wp-json/wp/v2/posts?_embed";
-
-// async function getPosts() {
-//   try {
-//     const response = await fetch(baseUrl);
-//     const posts = await response.json();
-//     console.log(posts);
-  
-    
-//     let i = 0;
-//     let image = posts[i]._embedded["wp:featuredmedia"][0].source_url;
-//     console.log(image);
-
-//     createCarosel(posts, image); 
-
-//     return posts;
-//   } catch(error) {
-//     console.log(error);
-//   }
-// }
-
-
-
-
-
-// function createCarosel(posts, image) {
-//   const wrapper = document.querySelector(".wrapper");
-//   wrapper.innerHTML = `<i id="left" class="fa-solid fa-caret-left fa-4x arrow-left"></i>
-//   <ul class="carousel">
-//     <li class="card">
-//       <div class="carousel-img-container">
-//         <img src="${image}" class="carousel-image">
-//         <div class="carousel-img-tag">Hardware</div>
-//       </div>
-//       <div class="carousel-info-container">
-//         <div class="info-content">
-//           <h2 class="carousel-h2"></h2>
-//           <p class="carousel-p"></p>
-//           <div class="dot-flex">
-//             <p class="carousel-date"></p>
-//             <div class="dot-group">
-//               <div class="dot dot-active"></div>
-//               <div class="dot"></div>
-//               <div class="dot"></div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </li>
-//     <li class="card">
-//       <div class="carousel-img-container">
-//         <img src="images/basshead.jpg" class="carousel-image">
-//         <div class="carousel-img-tag">Hardware</div>
-//       </div>
-//       <div class="carousel-info-container">
-//         <div class="info-content">
-//           <h2 class="carousel-h2"></h2>
-//           <p class="carousel-p"></p>
-//           <div class="dot-flex">
-//             <p class="carousel-date"></p>
-//             <div class="dot-group">
-//               <div class="dot"></div>
-//               <div class="dot dot-active"></div>
-//               <div class="dot"></div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </li>
-//     <li class="card">
-//       <div class="carousel-img-container">
-//         <img src="images/colorsynth2.png" class="carousel-image">
-//         <div class="carousel-img-tag">Hardware</div>
-//       </div>
-//       <div class="carousel-info-container">
-//         <div class="info-content">
-//           <h2 class="carousel-h2"></h2>
-//           <p class="carousel-p"></p>
-//           <div class="dot-flex">
-//             <p class="carousel-date"></p>
-//             <div class="dot-group">
-//               <div class="dot"></div>
-//               <div class="dot"></div>
-//               <div class="dot dot-active"></div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </li>
-//   </ul>
-//   <i id="right" class="fa-solid fa-caret-right fa-4x"></i>`
-// }
-
-
-
-// createCarosel();
-
-// getPosts();
-
-
-
 const baseUrl = "https://wordpress.tidemand-goose.no/wp-json/wp/v2/posts?_embed";
 
-async function getPosts() {
+async function fetchPosts() {
   try {
     const response = await fetch(baseUrl);
     const posts = await response.json();
     console.log(posts);
-
-    createCarosel(posts); // Pass the `posts` array to the `createCarousel` function
-
+    const card = document.querySelector(".card");
+    console.log(card)
     return posts;
-  } catch(error) {
+    } catch(error) {
     console.log(error);
-  }
+    }
 }
 
-function createCarosel(posts) {
-  const wrapper = document.querySelector(".wrapper");
-  wrapper.innerHTML = `<i id="left" class="fa-solid fa-caret-left fa-4x arrow-left"></i>
-  <ul class="carousel">
-    ${posts.map((post, index) => {
-      const image = post._embedded["wp:featuredmedia"][0].source_url;
-      return `<li class="card ${index === 0 ? 'active' : ''}">
-        <div class="carousel-img-container">
-          <img src="${image}" class="carousel-image">
-          <div class="carousel-img-tag">Hardware</div>
-        </div>
-        <div class="carousel-info-container">
-          <div class="info-content">
-            <h2 class="carousel-h2">${post.title.rendered}</h2>
-            <p class="carousel-p">${post.excerpt.rendered}</p>
-            <div class="dot-flex">
-              <p class="carousel-date">${new Date(post.date).toLocaleDateString()}</p>
-              <div class="dot-group">
-                ${posts.map((_, i) => `<div class="dot ${i === index ? 'dot-active' : ''}"></div>`).join('')}
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>`;
-    }).join('')}
-  </ul>
-  <i id="right" class="fa-solid fa-caret-right fa-4x"></i>`;
+function createPostsHTML(posts){;
+  for(let i=0; i < posts.length; i++) {
+  const post = posts[i];
+  let image = posts[i]._embedded["wp:featuredmedia"][0].source_url;
+  let title = post.title.rendered;
+  let subHeader = post.excerpt.rendered.replace(/<\/?p>/g, "");
   
-  initCarousel(); // Call the `initCarousel` function after creating the carousel elements
-}
+  let dateString = post.date;
+  let dateObject = new Date(dateString);
+  let formattedDate = dateObject.toLocaleDateString("en-GB");
+  
+  console.log(formattedDate)  
+  console.log(title)
+  console.log(image)
+  console.log(subHeader)
+  
+  createPostHTML(image, title, subHeader, formattedDate);
+  }
+  }
+  
+  async function main() {
+  const posts = await fetchPosts();
+  createPostsHTML(posts);
+  }
+  
+  main();
 
-getPosts();
+
+
+
+
+// function createPostHTML(image, title, subHeader, formattedDate){
+//   const wrapper = document.querySelector(".wrapper");
+//     wrapper.innerHTML = `<i id="left" class="fa-solid fa-caret-left fa-4x arrow-left"></i>
+//     <ul class="carousel">
+//       <li class="card">
+//         <div class="carousel-img-container">
+//           <img src="${image}" class="carousel-image">
+//           <div class="carousel-img-tag">Hardware</div>
+//         </div>
+//         <div class="carousel-info-container">
+//           <div class="info-content">
+//             <h2 class="carousel-h2">${title}</h2>
+//             <p class="carousel-p">${subHeader}</p>
+//             <div class="dot-flex">
+//               <p class="carousel-date">${formattedDate}</p>
+//               <div class="dot-group">
+//                 <div class="dot dot-active"></div>
+//                 <div class="dot"></div>
+//                 <div class="dot"></div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </li>
+//       <li class="card">
+//         <div class="carousel-img-container">
+//           <img src="${image[i]}" class="carousel-image">
+//           <div class="carousel-img-tag">Hardware</div>
+//         </div>
+//         <div class="carousel-info-container">
+//           <div class="info-content">
+//             <h2 class="carousel-h2">${title[i]}</h2>
+//             <p class="carousel-p"></p>
+//             <div class="dot-flex">
+//               <p class="carousel-date"></p>
+//               <div class="dot-group">
+//                 <div class="dot"></div>
+//                 <div class="dot dot-active"></div>
+//                 <div class="dot"></div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </li>
+//       <li class="card">
+//         <div class="carousel-img-container">
+//           <img src="${image[i]}" class="carousel-image">
+//           <div class="carousel-img-tag">Hardware</div>
+//         </div>
+//         <div class="carousel-info-container">
+//           <div class="info-content">
+//             <h2 class="carousel-h2">${title[i]}</h2>
+//             <p class="carousel-p"></p>
+//             <div class="dot-flex">
+//               <p class="carousel-date"></p>
+//               <div class="dot-group">
+//                 <div class="dot"></div>
+//                 <div class="dot"></div>
+//                 <div class="dot dot-active"></div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </li>
+//     </ul>
+//     <i id="right" class="fa-solid fa-caret-right fa-4x"></i>`;
+// }
+
+const renderCarousel = async () => {
+  try {
+    const response = await fetchPosts("/wp/v2/posts", "?per_page=12&_embed");
+    const carousel = document.querySelector(".carousel");
+  const arrowButtons = document.querySelectorAll(".wrapper i");
+  const firstCardWidth = document.querySelector(".card").offsetWidth;
+  const carouselChildrens = [...carousel.children];
+
+  let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+  let timeoutId;
+    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+      carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+  });
+
+  carouselChildrens.slice(0, cardPerView).forEach(card => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+  });
+
+  function arrowClick(){
+      arrowButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          console.log("YO")
+          carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
+        })
+      })
+  }
+
+  arrowClick();
+
+  const infiniteScroll = () => {
+    if(carousel.scrollLeft === 0){
+      carousel.classList.add("no-transition");
+      carousel.scrollLeft = carousel.scrollWidth - ( 2 * carousel.offsetWidth);
+      carousel.classList.remove("no-transition");
+    } else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+      carousel.classList.add("no-transition");
+      carousel.scrollLeft = carousel.offsetWidth;
+      carousel.classList.remove("no-transition");
+    }
+
+    clearTimeout(timeoutId);
+    if(!carousel.matches(":hover")) autoPlay();
+  }
+
+  const autoPlay = () => {
+      if(window.innerWidth < 800) return;
+      timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 3000);
+  }
+
+  autoPlay();
+
+  carousel.addEventListener("scroll", infiniteScroll);
+  carousel.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+  carousel.addEventListener("mouseleave", autoPlay);
+    
+  } catch (error) {
+    console.log(error);
+    carouselSection.innerHTML = "";
+    carouselSection.append(renderAlertDialog("alert", "Oops, latest posts failed to load. Please try again later"));
+  }
+};
+
+console.log("HEKLLLO")
+
+// Setup
+export const setupIndex = () => {
+  
+ 
+  renderCarousel();
+};
 

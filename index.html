@@ -15,7 +15,8 @@
   <link href="css/styles.css" rel="stylesheet">
   <!-- JS -->
   <!-- <script src="js/components/api.js" defer></script> -->
-  <script src="js/components/createCarousel.js" defer type="module"></script>
+  <!-- <script src="js/components/createCarousel.js" defer></script> -->
+  <!-- <script src="js/components/carousel.js" defer></script> -->
   <script src="js/index.js" defer type="module"></script>
   <title>Home | Goose</title>
 </head>
@@ -57,7 +58,7 @@
     <!-- Carousel -->
     <div class="latest">Latest Post:</div>
     <section class="wrapper">
-      
+  
     </section>
     <!-- <section class="wrapper">
       <i id="left" class="fa-solid fa-caret-left fa-4x arrow-left"></i>
@@ -165,6 +166,12 @@
     </div>
   </footer>
   <!-- SVG -->
-
+  <script src="js/components/createCarousel.js"></script>
+  <script src="js/components/carousel.js" defer></script>
+  <script type="module">
+    import { setupIndex } from "./js/components/caroHTML.js";
+    setupIndex();
+  </script>
+  
 </body>
 </html>
