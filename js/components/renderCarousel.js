@@ -1,6 +1,6 @@
 const renderCarousel = async () => {
   try {
-    const response = await fetchPosts("/wp/v2/posts", "?per_page=12&_embed");
+    const response = await fetchPosts();
     console.log(response);
     const carousel = document.querySelector(".carousel");
     const arrowButtons = document.querySelectorAll(".wrapper i");
@@ -43,6 +43,9 @@ const renderCarousel = async () => {
     if(!carousel.matches(":hover")) autoPlay();
   }
 
+
+  
+
   const autoPlay = () => {
       if(window.innerWidth < 800) return;
       timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 3000);
@@ -56,8 +59,6 @@ const renderCarousel = async () => {
     
   } catch (error) {
     console.log(error);
-    carouselSection.innerHTML = "";
-    carouselSection.append(renderAlertDialog("alert", "Oops, latest posts failed to load. Please try again later"));
   }
 };
 
@@ -65,4 +66,5 @@ const renderCarousel = async () => {
 export const setupIndex = () => {
     renderCarousel();
 };
+
 

@@ -14,9 +14,12 @@
   <!-- CSS -->
   <link href="css/styles.css" rel="stylesheet">
   <!-- JS -->
-  <!-- <script src="js/components/api.js" defer></script> -->
-  <!-- <script src="js/components/createCarousel.js" defer></script> -->
-  <!-- <script src="js/components/carousel.js" defer></script> -->
+  <script src="/js/components/api.js" defer type="module"></script>
+  <script src="js/components/createCarousel.js" defer></script>
+  <script type="module">
+    import { setupIndex } from "./js/components/renderCarousel.js";
+    setupIndex();
+  </script>
   <script src="js/index.js" defer type="module"></script>
   <title>Home | Goose</title>
 </head>
@@ -61,7 +64,7 @@
     </section>
  
     <p class="trending-header">Trending:</p>
-    <section class="trending-grid"></section>
+    <section class="trending-container"></section>
     
     <a href="#" class="to-top-btn" aria-label="to-top-button">
       <i class="fa-solid fa-arrow-up"></i>
@@ -100,12 +103,12 @@
     </div>
   </footer>
   <!-- SVG -->
-  <script src="js/components/createCarousel.js"></script>
+  <!-- <script src="js/components/createCarousel.js"></script>
   <script src="js/components/carousel.js" defer></script>
   <script type="module">
     import { setupIndex } from "./js/components/renderCarousel.js";
     setupIndex();
-  </script>
+  </script> -->
   
 </body>
 </html>

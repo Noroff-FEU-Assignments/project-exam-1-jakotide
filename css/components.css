@@ -44,12 +44,10 @@
 
 /* Carousel */
 
-
 .wrapper {
   max-width: 76em;
   width: 100%;
   position: relative;
-
 }
 
 .wrapper .carousel {
@@ -58,7 +56,6 @@
   grid-auto-columns: calc(100% / 1);
   overflow: hidden;
   scroll-behavior: smooth;
-
 }
 
 .carousel {
@@ -131,24 +128,10 @@
   justify-content: space-between;
 }
 
-.dot-group {
-  display: flex;
-  /* align-items: center; */
-  margin-top: 1.7em;
-}
-
-.dot {
-  display: block;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: var(--clr-darkgrey);
-  margin: 0 10px;
-  z-index: 5;
-}
-
-.dot-active {
-  background-color: var(--clr-yellow);
+.wavy {
+  margin-top: 25px;
+  object-fit: contain;
+  
 }
 
 .carousel.no-transition {
