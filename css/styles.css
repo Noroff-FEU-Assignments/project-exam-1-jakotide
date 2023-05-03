@@ -776,3 +776,63 @@ footer {
 .contact-header p {
   color: var(--clr-white);
 }
+
+/* Article Page */
+
+.article-section {
+  width: 76em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 600px;
+  gap: 20px;
+  row-gap: 30px;
+  margin: 50px 0 150px;
+}
+
+.article-container {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+.article-image-container {
+  position: relative;
+}
+
+.article-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.article-content {
+  background-color: var(--clr-grey);
+  color: var(--clr-white);
+  height: 300px;
+  width: 100%;
+  padding: 1.3rem 4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article-header {
+  font-size: 2rem;
+  width: 14em;
+  margin-bottom: 30px;
+}
+
+.article-excerpt {
+  margin-bottom: 40px;
+  width: 26em;
+}
+
+.article-bot-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+

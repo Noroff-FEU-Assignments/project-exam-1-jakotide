@@ -14,7 +14,7 @@
   <!-- CSS -->
   <link href="/css/styles.css" rel="stylesheet">
   <!-- JS -->
-  <script src="js/index.js" defer type="module"></script>
+  <script src="/js/js-pages/articles.js" defer type="module"></script>
   <title>Articles | Goose</title>
 </head>
 <body>
@@ -22,12 +22,12 @@
   <header>
     <nav class="navbar">
       <div class="nav-content">
-         <a href="index.html" class="logo">Goose</a>
+         <a href="/index.html" class="logo">Goose</a>
          <ul class="nav-ul">
            <a href="/index.html"><li>Home</li></a>
-           <a href="pages/articles.html"><li class="active">Articles</li></a>
-           <a href="pages/about.html"><li>About</li></a>
-           <a href="pages/contact.html"><li>Contact</li></a>
+           <a href="articles.html"><li class="active">Articles</li></a>
+           <a href="about.html"><li>About</li></a>
+           <a href="contact.html"><li>Contact</li></a>
         </ul>
         <div class="hamburger">
           <span class="bar"></span>
@@ -40,11 +40,11 @@
   <main>
     <div class="main-header">
       <h1>Articles</h1>
-      <p>Testing retro synths from the future and other useless devices</p>
-      <img class="header-circles" src="images/headercircles.jpg"alt="">
+      <p>All our posts and news</p>
+      <img class="header-circles" src="/images/headercircles.jpg" alt="Yellow circles">
     </div>
     
-
+    <section class="article-section"></section>
     
     <a href="#" class="to-top-btn" aria-label="to-top-button">
       <i class="fa-solid fa-arrow-up"></i>
@@ -56,12 +56,14 @@
     <div class="footer-content">
       <div class="newsletter">
         <div class="news-sub">
-          <p class="sub-one">Subscribe to our newsletter!</p>
+          <h2 class="sub-one">Subscribe to our newsletter!</h2>
           <p class="sub-two">Get our latest posts and news!</p>
         </div>
         <form class="news-form">
           <label for="newsletter" aria-label="newsletter"></label>
-          <input name="newsletter" id="newsletter" placeholder="Enter your email" class="news-input">
+          <p class="newsletter-error">Please enter your email*</p>
+          <p class="newsletter-success">Thank you for subscribing!</p>
+          <input name="newsletter" type="email" id="newsletter" placeholder="Enter your email" class="news-input">
           <button class="news-button">Subscribe</button>
         </form>
       </div>

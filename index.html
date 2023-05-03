@@ -73,12 +73,14 @@
     <div class="footer-content">
       <div class="newsletter">
         <div class="news-sub">
-          <h3 class="sub-one">Subscribe to our newsletter!</h3>
+          <h2 class="sub-one">Subscribe to our newsletter!</h2>
           <p class="sub-two">Get our latest posts and news!</p>
         </div>
         <form class="news-form">
           <label for="newsletter" aria-label="newsletter"></label>
-          <input name="newsletter" id="newsletter" placeholder="Enter your email" class="news-input">
+          <p class="newsletter-error">Please enter your email*</p>
+          <p class="newsletter-success">Thank you for subscribing!</p>
+          <input name="newsletter" type="email" id="newsletter" placeholder="Enter your email" class="news-input">
           <button class="news-button">Subscribe</button>
         </form>
       </div>

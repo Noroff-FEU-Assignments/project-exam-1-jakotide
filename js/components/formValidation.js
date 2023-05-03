@@ -13,9 +13,6 @@ const textError = document.querySelector("#textError");
 
 const successMessage = document.querySelector(".successMessage");
 
-const newsLetter = document.querySelector(".newsletter")
-
-
 
 function validateForm(event) {
     event.preventDefault();
@@ -59,10 +56,12 @@ function checkLength(value, len) {
   }
 };
 
-export function validateEmail(email) {
+function validateEmail(email) {
   const regEx = /\S+@\S+\.\S+/;
   const patternMatches = regEx.test(email);
   return patternMatches;
 };
 
+
 form.addEventListener("submit", validateForm);
+
