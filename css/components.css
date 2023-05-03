@@ -2,6 +2,7 @@
 
   1. To top button
   2. Carousel
+  3. Contact Form
 
 */
 
@@ -53,6 +54,11 @@
   max-width: 76em;
   width: 100%;
   position: relative;
+  margin: auto;
+}
+
+.header-container {
+  max-width: 76;
   margin: auto;
 }
 
@@ -144,7 +150,8 @@
 }
 
 @media (max-width: 87.5em){
-  .wrapper {
+  .wrapper,
+  .header-container {
     max-width: 70em;
   }
 
@@ -155,14 +162,11 @@
   .card {
     width: 70em;
   }
-
-  .latest {
-    margin: 1.5em 0 0.4em 3.5em;
-  }
 }
 
 @media (max-width: 80em){
-  .wrapper {
+  .wrapper,
+  .header-container {
     max-width: 60em;
   }
 
@@ -177,7 +181,8 @@
 }
 
 @media (max-width: 67.5em){
-  .wrapper {
+  .wrapper,
+  .header-container {
     max-width: 50em;
   }
 
@@ -203,14 +208,11 @@
   .dot-flex {
     width: 43em;
   }
-
-  .latest {
-    margin: 1.5em 0 0.4em 5.4em;
-  }
 }
 
 @media (max-width: 57.5em){
-  .wrapper {
+  .wrapper,
+  .header-container {
     max-width: 40em;
   }
 
@@ -228,7 +230,8 @@
 }
 
 @media (max-width: 47.5em){
-  .wrapper {
+  .wrapper,
+  .header-container {
     max-width: 30em;
   }
 
@@ -269,7 +272,8 @@
 }
 
 @media (max-width: 37em){
-  .wrapper {
+  .wrapper,
+  .header-container {
     max-width: 23em;
   }
 
@@ -326,7 +330,8 @@
 }
 
 @media (max-width: 28.2em){
-  .wrapper {
+  .wrapper,
+  .header-container {
     max-width: 20em;
   }
 
@@ -388,14 +393,77 @@
   .wrapper i:last-child {
     right: -15px;
   }
+}
 
-  .latest {
-    margin: 1.5em 0 0.4em 3.8em;
+/* Contact Form */
+
+.form-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 40em;
+}
+
+.contact-form {
+  margin: 60px auto 180px;
+  width: 40em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 40em;
+  padding-left: 8px;
+}
+
+.contact-form input {
+  height: 42px;
+  margin-bottom: 12px;
+}
+
+.contact-form textarea {
+  height: 100px;
+}
+
+.contact-form label {
+  color: var(--clr-white);
+}
+
+.error {
+  color: var(--clr-error);
+  display: none;
+}
+
+.successMessage {
+  color: var(--clr-success);
+  display: none;
+}
+
+.send-btn {
+  background-color: var(--clr-blue);
+  border: none;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: var(--clr-bluehover);
+}
+
+@media (max-width: 45.625em) {
+  .form-flex,
+  .contact-form,
+  .contact-form input,
+  .contact-form textarea {
+    width: 30em;
   }
 }
 
-@media (max-width: 24.375em){
-  .latest {
-    margin: 1.5em 0 0.4em 3em;
+@media (max-width: 34em) {
+  .form-flex,
+  .contact-form,
+  .contact-form input,
+  .contact-form textarea {
+    width: 22em;
   }
 }
+

@@ -15,7 +15,6 @@ getPosts();
 // Trending section
 
 
-
 function createIndexHTML(post, imgData, altText, formattedDate){
     const trendingContainer = document.querySelector(".trending-container");
 
