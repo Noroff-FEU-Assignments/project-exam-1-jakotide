@@ -1,32 +1,76 @@
 import { navScroll } from "./components/navbar.js";
 import { hamburgerClicked } from "./components/navbar.js";
 import { toTopButton } from "./components/totopbtn.js";
-// import { drawSvgPaths } from "./components/svg.js";
+import { drawSvgPaths } from "./components/svg.js";
 import { getPosts } from "./components/api.js";
 
 
 toTopButton();
 navScroll();
-// drawSvgPaths();
+drawSvgPaths();
 hamburgerClicked();
 getPosts();
 
 
 // Trending section
 
-function createIndexHTML(post, imgData, altText){
+
+
+function createIndexHTML(post, imgData, altText, formattedDate){
     const trendingContainer = document.querySelector(".trending-container");
 
     const postContainer = document.createElement("div");
     postContainer.classList.add("post-container");
     postContainer.id = post.id;
+
+    const postImageContainer = document.createElement("a");
+    postImageContainer.classList.add("post-image-container");
     
     const postImage = document.createElement("img");
     postImage.classList.add("post-image");
     postImage.src = imgData;
     postImage.alt = altText;
-    console.log(postImage.alt);
 
+    const postContent = document.createElement("div");
+    postContent.classList.add("post-content");
+
+    const postTitle = document.createElement("h3");
+    postTitle.classList.add("post-header");
+    postTitle.innerText = post.title.rendered;
+    
+    const postExcerpt = document.createElement("p");
+    postExcerpt.classList.add("post-excerpt");
+    postExcerpt.innerText = post.excerpt.rendered.replace(/<\/?p>/g, "");
+    postExcerpt.innerHTML = new DOMParser().parseFromString(post.excerpt.rendered, "text/html").body.textContent;
+
+    const postLink = document.createElement("a");
+    postLink.classList.add("post-link");
+    postLink.innerText = "Read More";
+
+    const postBotFlex = document.createElement("div");
+    postBotFlex.classList.add("post-bot-flex");
+
+    const postDate = document.createElement("div");
+    postDate.classList.add("post-date");
+    postDate.innerText = formattedDate;
+
+    const postTag = document.createElement("div");
+    postTag.classList.add("post-tag");
+    postTag.innerText = post._embedded["wp:term"][0][0].name;
+    if (post._embedded["wp:term"][0][0].name === "Synths"){
+      postTag.style.backgroundColor = "#F1ABB9";
+    } else if (post._embedded["wp:term"][0][0].name === "Devices"){
+      postTag.style.backgroundColor = "#65A4BA";
+    } else if (post._embedded["wp:term"][0][0].name === "News"){
+      postTag.style.backgroundColor = "#39C5AF";
+    };
+
+    trendingContainer.append(postContainer);
+    postContainer.append(postImageContainer, postContent);
+    postImageContainer.append(postImage, postTag)
+    postContent.append(postTitle, postExcerpt, postBotFlex);
+    postBotFlex.append(postDate, postLink);
+ 
 };
 
 function loopIndexHTML(posts){
@@ -34,13 +78,17 @@ function loopIndexHTML(posts){
     const post = posts[i];
     const imgData = post._embedded["wp:featuredmedia"][0].source_url;
     let altText = post._embedded["wp:featuredmedia"][0].alt_text;
-    
-    createIndexHTML(post, imgData, altText);
+    let dateString = post.date;
+    let dateObject = new Date(dateString);
+    let formattedDate = dateObject.toLocaleDateString("en-GB");
+    console.log(formattedDate);
+    createIndexHTML(post, imgData, altText, formattedDate);
   }
 };
 
 async function main(){
-  const posts = await getPosts();
+  const perPage = "&_per_page=4";
+  const posts = await getPosts(4);
   loopIndexHTML(posts);
 };
 

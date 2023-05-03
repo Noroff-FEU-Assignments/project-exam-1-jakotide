@@ -49,6 +49,7 @@ body {
   font-size: 1rem;
   background-color: var(--clr-darkgrey);
   letter-spacing: 0.11em;
+  scroll-behavior: smooth;
 }
 
 img, svg {
@@ -225,11 +226,6 @@ h1 {
   line-height: 1em;
 }
 
-.latest {
-  color: var(--clr-white);
-  margin: 1.5em 0 0.4em 0.4em;
-}
-
 .header-circles {
   z-index: -3;
   position: absolute;
@@ -238,13 +234,25 @@ h1 {
 
 svg {
   position: absolute;
-  top: 105%;
-  left: 60%;
+  top: 200%;
+  left: 0%;
   mix-blend-mode: difference;
   color: var(--clr-yellow);
+  overflow: hidden;
+  z-index: -5;
+}
+
+@media (max-width: 87.5em){
+  h1 {
+    margin-left: 2.8rem;
+  }
 }
 
 @media (max-width: 81.25em){
+
+  main {
+    max-width: 60em;
+  }
 
   .main-header {
     max-width: 60em; 
@@ -252,13 +260,14 @@ svg {
 
   h1 {
     font-size: 4.6rem;
-    margin-left: 2rem;
+    margin-left: 2.2rem;
   }
 
   .main-header p {
     font-size: 1.2rem;
   }
 }
+
 
 @media (max-width: 62em){
   .main-header {
@@ -313,7 +322,226 @@ svg {
 
 .trending-header {
   color: var(--clr-white);
-  height: 1500px;
+  margin: 1.5em 0 0.4em 0.4em;
+}
+
+.trending-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 200px;
+}
+
+.post-container {
+  max-width: 76em;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+
+.post-container:nth-child(even) .post-image {
+  order: 2;
+}
+
+.post-container:nth-child(even) .post-content {
+  order: 1;
+}
+
+* {
+  outline: 1px solid red;
+}
+
+.post-image {
+  height: 500px;
+  width: 48em;
+  object-fit: cover;
+}
+
+.post-image-container {
+  position: relative;
+}
+
+.post-content {
+  background-color: var(--clr-white);
+  height: 500px;
+  width: 100%;
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-header {
+  font-size: 2rem;
+  width: 12em;
+  margin-bottom: 60px;
+}
+
+.post-excerpt {
+  margin-bottom: 70px;
+  width: 22em;
+}
+
+.post-link {
+  font-weight: var(--fw-bold);
+}
+
+.post-bot-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.post-date {
+  font-weight: var(--fw-bold);
+}
+
+.post-tag {
+  padding: 0.7rem 1.3rem;
+  position: absolute;
+  top: 0;
+  right: 0; 
+}
+
+@media (max-width: 87.5em){
+  .post-container {
+    max-width: 70em;
+  }
+}
+
+@media (max-width: 80em){
+  .post-container {
+    max-width: 60em;
+  }
+}
+
+@media (max-width: 67.5em){
+  .post-container {
+    max-width: 50em;
+  }
+
+  .post-image,
+  .post-content {
+    width: 25em;
+  }
+
+  .post-content {
+    padding: 3.5em 3em;
+  }
+
+  .post-header {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 57.5em){
+  .post-container {
+    max-width: 40em;
+  }
+
+  .post-image,
+  .post-content {
+    width: 20em;
+  }
+
+  .post-content {
+    padding: 3.5em 2.8em;
+  }
+
+  .post-header {
+    font-size: 1.6rem;
+    width: 10em;
+  }
+
+  .post-excerpt {
+    width: 14em;
+  }
+}
+
+@media (max-width: 47.5em){
+  .post-container {
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-container:nth-child(even) .post-image {
+    order: 1;
+  }
+  
+  .post-container:nth-child(even) .post-content {
+    order: 2;
+  }
+
+  .post-image,
+  .post-content {
+    width: 30em;
+    height: 350px;
+  }
+
+  .post-content {
+    padding: 2em 2.2em;
+    height: 260px;
+  }
+
+  .post-header {
+    font-size: 1.3rem;
+    width: 16em;
+    margin-bottom: 1.3em;
+  }
+
+  .post-excerpt {
+    width: 22em;
+    margin-bottom: 1.5em;
+  }
+
+  .post-bot-flex {
+    margin-top: 1.3em;
+  }
+
+  .post-tag {
+    top: 10;
+    right: 0;
+  }
+}
+
+@media (max-width: 37em){
+  .post-container,
+  .post-content {
+    max-width: 23em;
+  }
+}
+
+@media (max-width: 28.2em){
+  .post-container,
+  .post-content,
+  .trending-container {
+    max-width: 20em;
+  }
+
+  .trending-container {
+    margin: 0 auto 200px;
+  }
+
+  .post-excerpt {
+    font-size: 0.9rem;
+    width: 16rem;
+  }
+
+  .post-header {
+    font-size: 1.2rem;
+    width: 17rem;
+  }
+}
+
+@media (max-width: 24.375em){
+  .latest {
+    margin: 1.5em 0 0.4em 3em;
+  }
 }
 
 /* Footer */

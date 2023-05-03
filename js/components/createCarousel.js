@@ -21,7 +21,7 @@ async function fetchPosts() {
   try {
     const response = await fetch(baseUrl + perPage + sortOrder + sortBy);
     const posts = await response.json();
-    console.log(posts);
+   
     return posts;
   } catch (error) {
     console.log(error);
@@ -29,10 +29,24 @@ async function fetchPosts() {
 }
 
 function createPostHTML(image, title, subHeader, formattedDate, categoryName, altText) {
+  let tagColor = "";
+  switch (categoryName) {
+    case "Synths":
+      tagColor = "#F1ABB9";
+      break;
+    case "News":
+      tagColor = "#39C5AF";
+      break;
+    case "Devices":
+      tagColor = "#65A4BA";
+      break;  
+    default:
+      tagColor = "black";
+  }
   return `<li class="card">
     <div class="carousel-img-container">
       <img src="${image}" class="carousel-image" alt="${altText}">
-      <div class="carousel-img-tag">${categoryName}</div>
+      <div class="carousel-img-tag" style="background-color: ${tagColor}">${categoryName}</div>
     </div>
     <div class="carousel-info-container">
       <div class="info-content">
@@ -60,12 +74,7 @@ async function createPostsHTML(posts) {
     let dateObject = new Date(dateString);
     let formattedDate = dateObject.toLocaleDateString("en-GB");
     let categoryName = post._embedded["wp:term"][0][0].name;
-    console.log(altText)
     console.log(categoryName)
-    console.log(formattedDate);
-    console.log(title);
-    console.log(image);
-    console.log(subHeader);
     postHTML += createPostHTML(image, title, subHeader, formattedDate, categoryName, altText);
   }
   wrapper.innerHTML = `<i id="left" class="fa-solid fa-caret-left fa-4x arrow-left"></i>
