@@ -39,6 +39,7 @@ function createIndexHTML(post, imgData, altText, formattedDate){
   const articleTitle = document.createElement("h3");
   articleTitle.classList.add("article-header");
   articleTitle.innerText = post.title.rendered;
+  articleTitle.innerHTML = new DOMParser().parseFromString(post.title.rendered, "text/html").body.textContent;
   
   const articleExcerpt = document.createElement("p");
   articleExcerpt.classList.add("article-excerpt");
@@ -89,9 +90,19 @@ for(let i = 0; i < posts.length; i++){
 };
 
 async function main(){
-const perPage = "&_per_page=4";
-const posts = await getPosts(10);
+const numberPosts = 10;
+const posts = await getPosts(numberPosts);
 loopIndexHTML(posts);
+
+const showMoreBtn = document.querySelector(".show-more-btn");
+showMoreBtn.addEventListener("click", async () => {
+  let startIndex = 10;
+  const newPosts = await getPosts(14, startIndex);
+  loopIndexHTML(newPosts);
+  showMoreBtn.style.display = "none";
+});
 };
 
 main();
+
+

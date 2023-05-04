@@ -17,8 +17,6 @@ const newsBtn = document.querySelector(".news-button");
 newsBtn.addEventListener("click", validateNewsletter);
 
 // Trending section
-
-
 function createIndexHTML(post, imgData, altText, formattedDate){
     const trendingContainer = document.querySelector(".trending-container");
 
@@ -40,6 +38,7 @@ function createIndexHTML(post, imgData, altText, formattedDate){
     const postTitle = document.createElement("h3");
     postTitle.classList.add("post-header");
     postTitle.innerText = post.title.rendered;
+    postTitle.innerHTML = new DOMParser().parseFromString(post.title.rendered, "text/html").body.textContent;
     
     const postExcerpt = document.createElement("p");
     postExcerpt.classList.add("post-excerpt");
