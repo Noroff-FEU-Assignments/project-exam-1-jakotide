@@ -12,9 +12,20 @@ drawSvgPaths();
 hamburgerClicked();
 getPosts();
 
+let posts;
+
 // Nesletter
 const newsBtn = document.querySelector(".news-button");
 newsBtn.addEventListener("click", validateNewsletter);
+
+const synthsBtn = document.querySelector(".synths-btn");
+const newsFilterBtn = document.querySelector(".news-btn");
+const devicesBtn = document.querySelector(".device-btn");
+
+synthsBtn.addEventListener("click", () => filterPosts("Synths"));
+newsFilterBtn.addEventListener("click", () => filterPosts("News"));
+devicesBtn.addEventListener("click", () => filterPosts("Devices"));
+
 
 // Create articles
 
@@ -89,9 +100,24 @@ for(let i = 0; i < posts.length; i++){
 }
 };
 
+function filterPosts(tag) {
+  // Clear the existing posts
+  const articleSection = document.querySelector(".article-section");
+  articleSection.innerHTML = "";
+
+  // Filter the posts based on the selected tag
+  const filteredPosts = posts.filter((post) => {
+    return post._embedded["wp:term"][0][0].name === tag;
+  });
+
+  // Display the filtered posts
+  loopIndexHTML(filteredPosts);
+}
+
+
 async function main(){
 const numberPosts = 10;
-const posts = await getPosts(numberPosts);
+posts = await getPosts(numberPosts);
 loopIndexHTML(posts);
 
 const showMoreBtn = document.querySelector(".show-more-btn");

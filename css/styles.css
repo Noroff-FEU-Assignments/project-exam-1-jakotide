@@ -15,6 +15,7 @@
   --clr-black: #000;
   --clr-greenhover: #47d8c2;
   --clr-bluehover: #7cbdd4;
+  --clr-pinkhover: #f8b5c2;
   --clr-error:#f5c2cc;
   --clr-success: #60e7d1;
 
@@ -843,6 +844,43 @@ footer {
   border: var(--clr-yellow) 1px solid;
   cursor: pointer;
   display: flex;
+}
+
+.filter-btn {
+  padding: 10px 50px;
+  margin-right: 12px;
+  border: none;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+
+.synths-btn {
+  background-color: var(--clr-pink);
+}
+
+.synths-btn:hover {
+  background-color: var(--clr-pinkhover);
+}
+
+.news-btn {
+  background-color: var(--clr-green);
+}
+
+.news-btn:hover {
+  background-color: var(--clr-greenhover);
+}
+
+.device-btn {
+  background-color: var(--clr-blue);
+}
+
+.device-btn:hover {
+  background-color: var(--clr-bluehover);
+}
+
+.filter-header {
+  color: var(--clr-white);
+  margin-bottom: 10px;
 }
 
 
