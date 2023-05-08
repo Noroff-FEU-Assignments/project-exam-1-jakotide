@@ -89,7 +89,7 @@ function loopIndexHTML(posts){
 };
 
 async function main(){
-  const perPage = "&_per_page=4";
+  // const perPage = "&_per_page=4";
   const posts = await getPosts(4);
   loopIndexHTML(posts);
 };

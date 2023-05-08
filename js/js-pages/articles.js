@@ -38,6 +38,7 @@ function createIndexHTML(post, imgData, altText, formattedDate){
 
   const articleImageContainer = document.createElement("a");
   articleImageContainer.classList.add("article-image-container");
+  articleImageContainer.href = "post.html?id=" + post.id;
   
   const articleImage = document.createElement("img");
   articleImage.classList.add("article-image");
@@ -60,6 +61,7 @@ function createIndexHTML(post, imgData, altText, formattedDate){
   const articleLink = document.createElement("a");
   articleLink.classList.add("article-link");
   articleLink.innerText = "Read More";
+  articleLink.href = "post.html?id=" + post.id;
 
   const articleBotFlex = document.createElement("div");
   articleBotFlex.classList.add("article-bot-flex");

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read our awesome blog post!">
+  <!-- Google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- CSS -->
+  <link href="/css/styles.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="/js/js-pages/articles.js" defer type="module"></script>
+  <title>Post | Goose</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-content">
+         <a href="/index.html" class="logo">Goose</a>
+         <ul class="nav-ul">
+           <a href="/index.html"><li>Home</li></a>
+           <a href="articles.html"><li class="active">Articles</li></a>
+           <a href="about.html"><li>About</li></a>
+           <a href="contact.html"><li>Contact</li></a>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="post-container"></section>
+
+    <a href="#" class="to-top-btn" aria-label="to-top-button">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="newsletter">
+        <div class="news-sub">
+          <h2 class="sub-one">Subscribe to our newsletter!</h2>
+          <p class="sub-two">Get our latest posts and news!</p>
+        </div>
+        <form class="news-form">
+          <label for="newsletter" aria-label="newsletter"></label>
+          <p class="newsletter-error">Please enter your email*</p>
+          <p class="newsletter-success">Thank you for subscribing!</p>
+          <input name="newsletter" type="email" id="newsletter" placeholder="Enter your email" class="news-input">
+          <button class="news-button">Subscribe</button>
+        </form>
+      </div>
+      <div class="social-flex">
+        <div class="footer-social">
+          <i class="fa-brands fa-twitter fa-2x"></i>
+          <i class="fa-brands fa-facebook fa-2x"></i>
+          <i class="fa-brands fa-instagram fa-2x"></i>
+        </div>
+        <div class="brand">GOOSE</div>
+      </div>
+      <div class="footer-nav">
+        <ul>
+          <a href="/pages/contact.html" class="footer-link"><li>Contact</li></a>
+          <a href="/pages/about.html" class="footer-link"><li>About Us</li></a>
+        </ul>
+        <div class="author">@Jakob Tidemand 2023</div>
+      </div>
+    </div>
+  </footer>
+  <!-- SVG -->
+</body>
+</html>

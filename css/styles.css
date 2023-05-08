@@ -787,7 +787,7 @@ footer {
   grid-template-rows: 600px;
   gap: 30px;
   row-gap: 30px;
-  margin: 50px 0 150px;
+  margin: 50px 0 100px;
 }
 
 .article-container {
@@ -798,6 +798,7 @@ footer {
 
 .article-image-container {
   position: relative;
+  color: var(--clr-black)
 }
 
 .article-image {
@@ -827,6 +828,16 @@ footer {
   margin-bottom: 40px;
   width: 26em;
 }
+
+.article-link {
+  cursor: pointer;
+  color: var(--clr-white);
+}
+
+.article-link:hover {
+  color: var(--clr-yellow);
+}
+
 
 .article-bot-flex {
   display: flex;
@@ -880,8 +891,19 @@ footer {
 
 .filter-header {
   color: var(--clr-white);
-  margin-bottom: 10px;
+  margin: 40px 0 10px;
 }
 
+/* Post Page */
+
+.post-image-main {
+  display: flex;
+  align-items: center;
+  height: 500px;
+  width: 76em;
+  max-width: 76em;
+  margin: auto;
+  /* margin-top: 8em; */
+}
 
 
