@@ -47,7 +47,7 @@ const renderCarousel = async () => {
   
 
   const autoPlay = () => {
-      if(window.innerWidth < 800) return;
+      // if(window.innerWidth < 800) return;
       timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 3000);
   }
 
