@@ -451,7 +451,7 @@
   background-color: var(--clr-blue);
   border: none;
   cursor: pointer;
-  border-radius: 0;
+  border-radius: none;
 }
 
 .send-btn:hover {
