@@ -14,7 +14,42 @@ async function fetchPosts() {
   }
 }
 
-function createPostHTML(image, title, subHeader, formattedDate, categoryName, altText) {
+// function createPostHTML(image, title, subHeader, formattedDate, categoryName, altText, postId) {
+//   console.log(postId)
+//   let tagColor = "";
+//   switch (categoryName) {
+//     case "Synths":
+//       tagColor = "#F1ABB9";
+//       break;
+//     case "News":
+//       tagColor = "#39C5AF";
+//       break;
+//     case "Devices":
+//       tagColor = "#65A4BA";
+//       break;  
+//     default:
+//       tagColor = "black";
+//   }
+//   return `<li class="card">
+//     <a class="carousel-img-container" href="post.html?id=${postId}">
+//       <img src="${image}" class="carousel-image" alt="${altText}">
+//       <div class="carousel-img-tag" style="background-color: ${tagColor}">${categoryName}</div>
+//     </a>
+//     <div class="carousel-info-container">
+//       <div class="info-content">
+//         <h2 class="carousel-h2">${title}</h2>
+//         <p class="carousel-p">${subHeader}</p>
+//         <div class="dot-flex">
+//           <p class="carousel-date">${formattedDate}</p>
+//           <img src="images/wavy2.png" class="wavy" alt="Yellow wavy line">
+//         </div>
+//       </div>
+//     </div>
+//   </li>`;
+// }
+
+function createPostHTML(image, title, subHeader, formattedDate, categoryName, altText, postId) {
+  console.log(postId);
   let tagColor = "";
   switch (categoryName) {
     case "Synths":
@@ -30,28 +65,30 @@ function createPostHTML(image, title, subHeader, formattedDate, categoryName, al
       tagColor = "black";
   }
   return `<li class="card">
-    <a class="carousel-img-container">
+    <a class="carousel-img-container" href="/pages/post.html?id=${postId}">
       <img src="${image}" class="carousel-image" alt="${altText}">
       <div class="carousel-img-tag" style="background-color: ${tagColor}">${categoryName}</div>
     </a>
     <div class="carousel-info-container">
-      <div class="info-content">
+      <a class="info-content" href="/pages/post.html?id=${postId}">
         <h2 class="carousel-h2">${title}</h2>
         <p class="carousel-p">${subHeader}</p>
         <div class="dot-flex">
           <p class="carousel-date">${formattedDate}</p>
           <img src="images/wavy2.png" class="wavy" alt="Yellow wavy line">
         </div>
-      </div>
+      </a>
     </div>
   </li>`;
 }
+
 
 async function createPostsHTML(posts) {
   const wrapper = document.querySelector(".wrapper");
   let postHTML = "";
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
+    console.log(post)
     let postId = post.id;
     console.log(postId) 
     let image = post._embedded["wp:featuredmedia"][0].source_url;
@@ -63,7 +100,7 @@ async function createPostsHTML(posts) {
     let formattedDate = dateObject.toLocaleDateString("en-GB");
     let categoryName = post._embedded["wp:term"][0][0].name;
     console.log(categoryName)
-    postHTML += createPostHTML(image, title, subHeader, formattedDate, categoryName, altText);
+    postHTML += createPostHTML(image, title, subHeader, formattedDate, categoryName, altText, postId);
   }
   wrapper.innerHTML = `<i id="left" class="fa-solid fa-caret-left fa-4x arrow-left"></i>
     <ul class="carousel">${postHTML}</ul>

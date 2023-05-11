@@ -50,17 +50,18 @@
   margin: 1.5em 0 0.4em 0.4em;
 }
 
-.wrapper {
-  max-width: 76em;
+.wrapper,
+.header-container {
+  max-width: 76rem;
   width: 100%;
   position: relative;
   margin: auto;
 }
-
+/* 
 .header-container {
-  max-width: 76;
+  max-width: 76rem;
   margin: auto;
-}
+} */
 
 .wrapper .carousel {
   display: grid;
@@ -81,7 +82,7 @@
 .carousel-image {
   object-fit: cover;
   height: 500px;
-  width: 76em;
+  width: 76rem;
 }
 
 .carousel-img-tag {
@@ -90,7 +91,7 @@
   left: 8%;
   padding: 0.8em 1.6em;
   font-weight: var(--fw-bold);
-  background-color: var(--clr-pink);
+  color: var(--clr-black);
 }
 
 .carousel-info-container {
@@ -106,6 +107,7 @@
   width: 56em;
   margin: auto;
   gap: 1em;
+  color: var(--clr-white);
 }
 
 .carousel-h2 {
@@ -354,6 +356,7 @@
 
   .carousel-img-tag {
     padding: 0.5em 1.2em;
+    /* top: 7%; */
   }
 
   .carousel-h2 {

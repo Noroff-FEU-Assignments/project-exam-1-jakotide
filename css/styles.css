@@ -363,6 +363,7 @@ svg {
 
 .post-image-container {
   position: relative;
+  color: var(--clr-black);
 }
 
 .post-content {
@@ -388,6 +389,11 @@ svg {
 
 .post-link {
   font-weight: var(--fw-bold);
+  color: var(--clr-black);
+}
+
+.post-link:hover {
+  color: var(--clr-blue);
 }
 
 .post-bot-flex {
@@ -896,19 +902,19 @@ footer {
 
 /* Post Page */
 
-.post-container,
-.post-header {
+.post-specific-container,
+.post-specific-header {
   max-width: 78em;
   margin: auto;
   display: flex;
 }
 
-.post-container {
+.post-specific-container {
   flex-direction: column;
   margin: 140px 0;
 }
 
-.post-header {
+.post-specific-header {
   flex-direction: row;
   justify-content: space-between;
   width: 38em;
@@ -932,7 +938,7 @@ footer {
   font-size: 1rem;
 }
 
-.post-image,
+.post-specific-image,
 .post-image-two,
 .post-text-one,
 .post-text-two {
@@ -953,6 +959,11 @@ footer {
   flex-direction: column;
   justify-content: center;
   gap: 1.6rem;
+}
+
+.post-specific-image,
+.post-image-two {
+  cursor: pointer;
 }
 
 .post-text-one p:first-child {
@@ -980,8 +991,8 @@ footer {
 }
 
 .modal-image {
-  max-width: 90%;
-  max-height: 90%;
+  width: 620px;
+  height: 620px;
   border-radius: 5px;
   position: relative;
 }
@@ -990,7 +1001,7 @@ footer {
   position: absolute;
   top: 50px;
   right: 50px;
-  color: #fff;
+  color: var(--clr-green);
   font-size: 24px;
   cursor: pointer;
 }

@@ -17,7 +17,7 @@ const newsBtn = document.querySelector(".news-button");
 newsBtn.addEventListener("click", validateNewsletter);
 
 // Trending section
-function createIndexHTML(post, imgData, altText, formattedDate){
+function createIndexHTML(post, imgData, altText, formattedDate, postId){
     const trendingContainer = document.querySelector(".trending-container");
 
     const postContainer = document.createElement("div");
@@ -26,6 +26,7 @@ function createIndexHTML(post, imgData, altText, formattedDate){
 
     const postImageContainer = document.createElement("a");
     postImageContainer.classList.add("post-image-container");
+    postImageContainer.href = "/pages/post.html?id=" + postId;
     
     const postImage = document.createElement("img");
     postImage.classList.add("post-image");
@@ -48,6 +49,7 @@ function createIndexHTML(post, imgData, altText, formattedDate){
     const postLink = document.createElement("a");
     postLink.classList.add("post-link");
     postLink.innerText = "Read More";
+    postLink.href = "/pages/post.html?id=" + postId;
 
     const postBotFlex = document.createElement("div");
     postBotFlex.classList.add("post-bot-flex");
@@ -78,13 +80,15 @@ function createIndexHTML(post, imgData, altText, formattedDate){
 function loopIndexHTML(posts){
   for(let i = 0; i < posts.length; i++){
     const post = posts[i];
+    const postId = post.id;
+    console.log(postId)
     const imgData = post._embedded["wp:featuredmedia"][0].source_url;
     let altText = post._embedded["wp:featuredmedia"][0].alt_text;
     let dateString = post.date;
     let dateObject = new Date(dateString);
     let formattedDate = dateObject.toLocaleDateString("en-GB");
     console.log(formattedDate);
-    createIndexHTML(post, imgData, altText, formattedDate);
+    createIndexHTML(post, imgData, altText, formattedDate, postId);
   }
 };
 

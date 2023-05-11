@@ -61,10 +61,10 @@ async function createPostHTML() {
     const postSection = document.querySelector(".post-section");
 
     const postContainer = document.createElement("div");
-    postContainer.classList.add("post-container");
+    postContainer.classList.add("post-specific-container");
 
     const postHeader = document.createElement("div");
-    postHeader.classList.add("post-header");
+    postHeader.classList.add("post-specific-header");
 
     const articleContentContainer = document.createElement("div");
     articleContentContainer.classList.add("article-content-container")
@@ -76,7 +76,7 @@ async function createPostHTML() {
     articleFlexTwo.classList.add("article-flex-one");
 
     const postImage = document.createElement("img");
-    postImage.classList.add("post-image");
+    postImage.classList.add("post-specific-image");
     postImage.src = post._embedded["wp:featuredmedia"][0].source_url;
     postImage.alt = post._embedded["wp:featuredmedia"][0].alt_text;
     console.log(postImage)
