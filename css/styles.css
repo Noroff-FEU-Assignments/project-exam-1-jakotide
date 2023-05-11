@@ -917,7 +917,7 @@ footer {
 .post-specific-header {
   flex-direction: row;
   justify-content: space-between;
-  width: 38em;
+  width: 72rem;
   margin: 10px 0 10px;
   align-items: baseline;
 }
