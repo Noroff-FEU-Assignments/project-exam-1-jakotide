@@ -7,7 +7,8 @@ const loader = document.querySelector(".loader");
 async function fetchPosts() {
   try {
     loader.style.display = "block";
-    const response = await fetch(baseUrl + perPage + sortOrder + sortBy);
+    // const response = await fetch(baseUrl + perPage + sortOrder + sortBy);
+    const response = await fetch(baseUrl + perPage);
     const posts = await response.json();
     loader.style.display = "none";
 
