@@ -988,7 +988,8 @@ footer {
 
   /* Header */
 
-    .main-header {
+    .main-header,
+    .filter-container {
     max-width: 70em; 
   }
 }
@@ -997,7 +998,8 @@ footer {
 
   /* Header */
 
-    .main-header {
+    .main-header,
+    .filter-container {
       max-width: 60em; 
     }
 
@@ -1014,7 +1016,8 @@ footer {
 
   /* Header */
 
-    .main-header {
+    .main-header,
+    .filter-container {
       max-width: 50em; 
     }
 
@@ -1036,7 +1039,8 @@ footer {
 
   /* Header */
 
-    .main-header {
+    .main-header,
+    .filter-container {
       max-width: 40em; 
     }
 
@@ -1058,7 +1062,8 @@ footer {
 
   /* Header */
 
-    .main-header {
+    .main-header,
+    .filter-container {
       max-width: 30em; 
     }
 
@@ -1095,13 +1100,20 @@ footer {
       width: 6.5rem;
       left: 72%;
     }
+
+  /* Articles Page*/
+  
+    .filter-container {
+      max-width: 23em;
+    }
 }
 
 @media (max-width: 28em) {
 
     /* Header */
 
-    .main-header {
+    .main-header,
+    .filter-container {
       max-width: 20em;
     }
 

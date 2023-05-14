@@ -71,8 +71,12 @@
   padding: 0;
 }
 
-.carousel-img-container {
+.card {
   position: relative;
+}
+
+.carousel-img-container {
+  /* position: relative; */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
@@ -85,7 +89,7 @@
 
 .carousel-img-tag {
   position: absolute;
-  top: 85%;
+  top: 40%;
   left: 8%;
   padding: 0.8em 1.6em;
   font-weight: var(--fw-bold);
