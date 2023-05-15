@@ -1,3 +1,21 @@
+import { navScroll } from "../components/navbar.js";
+import { hamburgerClicked } from "../components/navbar.js";
+import { toTopButton } from "../components/totopbtn.js";
+import { drawSvgPaths } from "../components/svg.js";
+import { getPosts } from "../components/api.js";
+import { validateNewsletter } from "../components/newsletter.js";
+
+
+toTopButton();
+navScroll();
+drawSvgPaths();
+hamburgerClicked();
+getPosts();
+
+// Nesletter
+const newsBtn = document.querySelector(".news-button");
+newsBtn.addEventListener("click", validateNewsletter);
+
 const postId = new URLSearchParams(window.location.search).get("id");
 const postBaseUrl = `https://wordpress.tidemand-goose.no/wp-json/wp/v2/posts/`;
 

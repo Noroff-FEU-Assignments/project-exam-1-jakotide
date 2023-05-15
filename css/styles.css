@@ -1135,6 +1135,7 @@ footer {
   .post-text-one,
   .post-text-two {
     width: 44.446em;
+    gap: 4rem;
   }
 }
 
@@ -1337,6 +1338,28 @@ footer {
   .post-text-one,
   .post-text-two {
     width: 25.556em;
+    gap: 2rem;
+  }
+
+  .post-h1-article {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+  }
+
+  .article-tag {
+    font-size: 1rem;
+  }
+
+  .post-text-one p:first-child {
+    font-size: 1rem;
+  }
+  
+  .post-text-two p:first-child {
+    font-size: 1.2rem; 
+  }
+
+  .article-date {
+    font-size: .9rem;
   }
 }
 
@@ -1348,6 +1371,13 @@ footer {
   .filter-container,
   .article-section {
     max-width: 20em;
+  }
+
+  .post-specific-header,
+  .post-specific-container,
+  .article-flex-one,
+  .article-flex-two {
+    max-width: 19em;
   }
 
   .header-circles {
@@ -1390,6 +1420,32 @@ footer {
 
   .post-date {
     font-size:.9rem;
+  }
+
+  /* Post Page */
+
+  .post-h1-article {
+    font-size: 2.8rem;
+  }
+
+  .article-tag {
+    font-size: .8rem;
+  }
+
+  .post-specific-image,
+  .post-image-two {
+    width: 19em;
+    height: 320px;
+  }
+
+  .post-text-one,
+  .post-text-two {
+    width: 21.112em;
+    gap: 1.5rem;
+  }
+
+  .post-text-one p:first-child {
+    font-size: .9rem;
   }
 }
 

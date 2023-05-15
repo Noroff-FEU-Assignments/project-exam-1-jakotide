@@ -1,13 +1,10 @@
 const baseUrl = "https://wordpress.tidemand-goose.no/wp-json/wp/v2/posts?_embed";
 const perPage = "&per_page=3";
-const sortOrder = "&order=asc";
-const sortBy = "&orderby=date";
 const loader = document.querySelector(".loader");
 
 async function fetchPosts() {
   try {
     loader.style.display = "block";
-    // const response = await fetch(baseUrl + perPage + sortOrder + sortBy);
     const response = await fetch(baseUrl + perPage);
     const posts = await response.json();
     loader.style.display = "none";
