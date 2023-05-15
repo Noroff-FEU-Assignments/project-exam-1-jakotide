@@ -462,7 +462,14 @@
   border: none;
   cursor: pointer;
   border-radius: none;
+  -webkit-border-radius: 0;
 }
+
+.send-btn:focus,
+.send-btn:active {
+  outline: none;
+}
+
 
 .send-btn:hover {
   background-color: var(--clr-bluehover);
