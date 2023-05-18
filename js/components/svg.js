@@ -27,8 +27,8 @@ document.addEventListener("scroll", drawSvgPaths);
 
 export function drawSvgPaths() {
   let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-  if (scrollPosition >= 1200) {
-    let scrollPercentage = (scrollPosition - 1200) / (document.documentElement.scrollHeight - document.documentElement.clientHeight - 1200);
+  if (scrollPosition >= 520) {
+    let scrollPercentage = (scrollPosition - 520) / (document.documentElement.scrollHeight - document.documentElement.clientHeight - 520);
 
     for (var i = 0; i < paths.length; i++) {
       let path = paths[i];

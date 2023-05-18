@@ -31,7 +31,8 @@ function createPostHTML(image, title, subHeader, formattedDate, categoryName, al
     default:
       tagColor = "black";
   }
-  return `<li class="card">
+  return `
+  <li class="card">
     <a class="carousel-img-container" href="/pages/post.html?id=${postId}">
       <img src="${image}" class="carousel-image" alt="${altText}">
       <div class="carousel-img-tag" style="background-color: ${tagColor}">${categoryName}</div>
