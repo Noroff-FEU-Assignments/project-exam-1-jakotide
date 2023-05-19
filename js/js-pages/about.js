@@ -4,10 +4,12 @@ import { toTopButton } from "../components/totopbtn.js";
 import { drawSvgPaths } from "../components/svg.js";
 import { getPosts } from "../components/api.js";
 import { validateNewsletter } from "../components/newsletter.js";
+import { drawGramophone } from "../components/svg.js";
 
 toTopButton();
 navScroll();
 drawSvgPaths();
+drawGramophone();
 hamburgerClicked();
 getPosts();
 

@@ -830,7 +830,8 @@ footer {
 }
 
 .about-flex-one,
-.about-flex-two {
+.about-flex-two,
+.about-flex-three {
   display: flex;
 }
 
@@ -839,7 +840,8 @@ footer {
 }
 
 .about-flex-one-p,
-.about-flex-two-p {
+.about-flex-two-p,
+.about-flex-three-p {
   color: var(--clr-white);
   background-color: var(--clr-grey);
   display: flex;
@@ -860,26 +862,48 @@ footer {
   font-size: 1.5rem;
 }
 
-.about-flex-one-svg {
-  background-color: var(--clr-blue);
-  height: 400px;
-  width: 38rem;
-}
-
-.about-flex-two-svg {
-  background-color: var(--clr-pink);
+.about-svg {
   height: 400px;
   width: 38rem;
   position: relative;
 }
 
+.about-flex-one-svg {
+  background-color: var(--clr-blue);
+}
+
+.about-flex-two-svg {
+  background-color: var(--clr-pink);
+}
+
+.about-flex-three-svg {
+  background-color: var(--clr-green);
+}
+
 .goose-svg {
   position: absolute;
   top: 15%;
-  left: 15%;
+  left: 23%;
   z-index: 100;
   color: #F1ABB9;
-  height: 250px;
+  height: 260px;
+}
+
+.synth-svg {
+  height: 300px;
+  width: 300px;
+  top: 10%;
+  left: 24%;
+  z-index: 100;
+  position: absolute;
+  color: white;
+}
+
+.gramophone-svg {
+  height: 300px;
+  width: 300px;
+  z-index: 100;
+  top: 0;
 }
 
 
