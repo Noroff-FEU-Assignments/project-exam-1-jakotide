@@ -21,26 +21,4 @@ let paths = document.querySelectorAll("path");
         }
     }
 
-let gramophonePath = document.querySelectorAll(".gramophone-svgp");
 
-document.addEventListener("scroll", drawSvgPaths);
-
-export function drawGramophone() {
-  let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-  if (scrollPosition >= 720) {
-    let scrollPercentage = (scrollPosition - 520) / (document.documentElement.scrollHeight - document.documentElement.clientHeight - 520);
-
-    for (var i = 0; i < gramophonePath.length; i++) {
-      let gramoPath = gramophonePath[i];
-
-      let gramoPathLength = gramopath.getTotalLength();
-
-      gramoPath.style.strokeDasharray = gramoPathLength;
-      gramoPath.style.strokeDashoffset = gramoPathLength;
-
-      let gramoDrawLength = gramoPathLength * scrollPercentage;
-
-      gramoPath.style.strokeDashoffset = gramoPathLength - gramoDrawLength;
-    }
-  }
-}

@@ -830,8 +830,7 @@ footer {
 }
 
 .about-flex-one,
-.about-flex-two,
-.about-flex-three {
+.about-flex-two {
   display: flex;
 }
 
@@ -840,8 +839,7 @@ footer {
 }
 
 .about-flex-one-p,
-.about-flex-two-p,
-.about-flex-three-p {
+.about-flex-two-p {
   color: var(--clr-white);
   background-color: var(--clr-grey);
   display: flex;
@@ -862,6 +860,20 @@ footer {
   font-size: 1.5rem;
 }
 
+.about-color-p-three {
+  /* background-color: var(--clr-grey); */
+  font-size: 1.1rem;
+  color: var(--clr-white);
+  padding: 3rem 8rem;
+  margin: 60px auto 100px;
+  width: 60rem;
+}
+
+.three-big {
+  color:var(--clr-pink);
+  font-size: 1.7rem;
+}
+
 .about-svg {
   height: 400px;
   width: 38rem;
@@ -874,10 +886,6 @@ footer {
 
 .about-flex-two-svg {
   background-color: var(--clr-pink);
-}
-
-.about-flex-three-svg {
-  background-color: var(--clr-green);
 }
 
 .goose-svg {
@@ -898,14 +906,6 @@ footer {
   position: absolute;
   color: white;
 }
-
-.gramophone-svg {
-  height: 300px;
-  width: 300px;
-  z-index: 100;
-  top: 0;
-}
-
 
 /* Media queries */
 
@@ -1403,6 +1403,11 @@ footer {
 
   .article-date {
     font-size: .9rem;
+  }
+
+  .modal-image {
+    width: 360px;
+    height: 360px;
   }
 }
 
