@@ -4,6 +4,7 @@
   2. Carousel
   3. Contact Form
   4. Loader
+  5. Comment Form
 
 */
 
@@ -551,4 +552,71 @@
   50% {
     transform: scale(1.2, 1);
   }
+}
+
+
+/* Comment Form */
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+  max-width: 76rem;
+}
+
+.write-h3,
+.comment-h3 {
+  color: var(--clr-white);
+  font-size: 1.5rem;
+  align-self: baseline;
+  margin-bottom: 20px;
+}
+
+.comment-form {
+  color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-section label {
+  margin-bottom: 20px;
+}
+
+.comment-form input, 
+.comment-form textarea {
+  width: 25rem;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.comment-btn {
+  border: none;
+  background-color: var(--clr-yellow);
+  padding: .7rem 2rem;
+}
+
+.comment-error {
+  display: none;
+}
+
+.no-comment {
+  color: var(--clr-white);
+  align-self: center;
+  margin-top: 50px;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  background-color: var(--clr-grey);
+  margin-bottom: 70px;
+  color: var(--clr-white);
+}
+
+.comment-name {
+  font-size: 1.2rem;
 }

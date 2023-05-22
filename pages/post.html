@@ -15,6 +15,7 @@
   <link href="/css/styles.css" rel="stylesheet">
   <!-- JS -->
   <script src="/js/components/hotjar.js"></script>
+  <script src="/js/components/comments.js" defer></script>
   <script src="/js/js-pages/post.js" defer type="module"></script>
   <title>Post | Goose</title>
 </head>
@@ -41,6 +42,33 @@
   <main class="main">
     <img class="header-circles" src="/assets/images/headercircles.jpg" alt="Yellow circles">
     <section class="post-section"></section>
+
+
+    <section class="comment-section">
+      <h3 class="comment-h3">Comments</h3>
+      <div class="comment-list"></div>
+      
+      <form class="comment-form">
+        <h3 class="write-h3">Write a comment</h3>
+        <div>
+          <div class="form-error-row"> 
+            <label for="firstname">Name</label>
+            <div class="error" id="NameError">Please enter your name</div>
+          </div>
+          <input type="text" id="firstname" class="comment-name"/>
+        </div>
+        <div>
+          <div class="form-error-row">
+            <label for="comment">Comment</label>
+            <div class="comment-error">Please enter a comment</div>
+          </div>
+          <textarea class="comment" id="comment" name="comment" rows="4" required></textarea>
+        </div>
+        <div>
+          <button class="comment-btn" type="submit">Post</button>
+        </div>
+      </form>
+    </section>
 
     <a href="#" class="to-top-btn" aria-label="to-top-button">
       <i class="fa-solid fa-arrow-up"></i>
