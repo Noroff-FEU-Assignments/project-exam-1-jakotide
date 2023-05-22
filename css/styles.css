@@ -16,6 +16,7 @@
   --clr-greenhover: #47d8c2;
   --clr-bluehover: #7cbdd4;
   --clr-pinkhover: #f8b5c2;
+  --clr-yellowhover: #fffbb9;
   --clr-error:#f5c2cc;
   --clr-success: #60e7d1;
 
@@ -1454,6 +1455,17 @@ footer {
     left: 15%;
   }
 
+  /* Comment form */
+
+  .comment-section {
+    max-width: 30rem;
+  }
+
+  .comment-form input, 
+  .comment-form textarea,
+  .comment-list {
+    width: 30rem;
+  }
 }
 
 @media (max-width: 37em) {
@@ -1598,6 +1610,18 @@ footer {
   .goose-svg {
     left: 4%;
   }
+
+    /* Comment form */
+
+    .comment-section {
+      max-width: 23rem;
+    }
+  
+    .comment-form input, 
+    .comment-form textarea,
+    .comment-list {
+      width: 23rem;
+    }
 }
 
 @media (max-width: 28em) {
@@ -1684,6 +1708,30 @@ footer {
   .post-text-one p:first-child {
     font-size: .9rem;
   }
+
+    /* Comment form */
+
+    .comment-section {
+      max-width: 19rem;
+    }
+  
+    .comment-form input, 
+    .comment-form textarea,
+    .comment-list {
+      width: 19rem;
+    }
+
+    .no-comment,
+    .comment-name {
+      font-size: 1rem;
+    }
+
+    .comment-date {
+      font-size: .85rem;
+      color: var(--clr-yellow);
+      padding: 1.1rem 0 0 .5rem;
+    }
+
 }
 
 

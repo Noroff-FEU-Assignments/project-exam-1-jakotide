@@ -20,19 +20,26 @@ async function getPost() {
 
 getPost();
 
-const nameComment = document.querySelector(".comment-name");
+const nameComment = document.querySelector(".input-comment-name");
 const comment = document.querySelector(".comment");
 const commentForm = document.querySelector(".comment-form");
 
 let comments = [];
 
+let encoded; // Declare the encoded variable
+
 commentForm.addEventListener("submit", async function (event) {
   event.preventDefault();
   try {
+    const user = "wordpress.tidemand-goose.no";
+    const psw = "g1w4 rM2S K8Wa z9Z5 UQsm gvry";
+    encoded = btoa(user + ":" + psw); // Assign the value to encoded
+
     const response = await fetch(`${commentUrl}?post=${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Basic ${encoded}`,
       },
       body: JSON.stringify({
         post: id,
@@ -40,76 +47,104 @@ commentForm.addEventListener("submit", async function (event) {
         content: comment.value,
       }),
     });
+
     if (response.ok) {
       console.log("Comment posted successfully");
-      location.reload();
+      // Fetch the comments again to update the comment section
+      await fetchComments();
+      renderComment(); // Render the updated comments
     } else {
-      console.log("Failed to post comment");
+      console.log("Error posting comment");
     }
   } catch (error) {
     console.log(error);
   }
 });
 
-
 async function fetchComments() {
   try {
     const response = await fetch(`${commentUrl}?post=${id}`);
     const data = await response.json();
 
+    comments = []; // Clear the comments array
+
     for (const item of data) {
       const commentObj = {
         commentId: item.id,
-        id: item.postId,
+        id: item.post,
         postDate: item.date,
-        commentName: item.author_name,
-        commentContent: item.content.rendered.replace(/(<([^>]+)>)/gi, "").replace(/&[a-z]+;/gi, ""),
+        nameComment: item.author_name,
+        commentContent: item.content.rendered
+          .replace(/(<([^>]+)>)/gi, "")
+          .replace(/&[a-z]+;/gi, ""),
       };
       comments.push(commentObj);
     }
-    return data;
   } catch (error) {
     console.log(error);
   }
 }
 
-fetchComments();
-
 const commentsList = document.querySelector(".comment-list");
 
-if (comments.length === 0) {
-  const noComment = document.createElement("div");
-  noComment.classList.add("no-comment");
-  noComment.innerHTML = "Be the first to comment!";
-  commentsList.append(noComment);
-} else {
-  comments.forEach((comment) => {
-    const commentContainer = document.createElement("div");
-    commentContainer.classList.add("comment-container");
-    commentsList.append(commentContainer);
 
-    const name = document.createElement("h4");
-    name.classList.add("comment-name");
-    name.textContent = `${comment.commentName}:`;
-    commentContainer.append(name);
+function renderComment() {
+  commentsList.innerHTML = ""; // Clear the comments list
 
-    const message = document.createElement("p");
-    message.classList.add("comment-content");
-    message.textContent = `${comment.commentContent}`;
-    commentContainer.append(message);
-  });
+  if (comments.length === 0) {
+    const noComment = document.createElement("div");
+    noComment.classList.add("no-comment");
+    noComment.innerHTML = "Be the first to comment!";
+    commentsList.append(noComment);
+  } else {
+    const maxComments = 5; // Maximum number of comments allowed
+
+    if (comments.length > maxComments) {
+      // Remove previous comments if the maximum limit is reached
+      comments.splice(0, comments.length - maxComments);
+    }
+
+    comments.slice().reverse().forEach((comment) => {
+      const commentContainer = document.createElement("div");
+      commentContainer.classList.add("comment-container");
+
+      const nameContainer = document.createElement("div");
+      nameContainer.classList.add("name-container");
+
+      const name = document.createElement("h4");
+      name.classList.add("comment-name");
+      name.textContent = `${comment.nameComment},`;
+
+      // const commentDate = document.createElement("div");
+      // commentDate.classList.add("comment-date");
+      // const formattedDate = new Date(comment.postDate).toLocaleString(); // Format the date
+      // commentDate.textContent = formattedDate + ":";
+
+      const commentDate = document.createElement("div");
+  commentDate.classList.add("comment-date");
+  const dateOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+  const timeOptions = { hour: '2-digit', minute: '2-digit' };
+  const formattedDate = new Date(comment.postDate).toLocaleDateString([], dateOptions); // Format the date and time
+  commentDate.textContent = formattedDate + ":";
+
+
+
+      const message = document.createElement("p");
+      message.classList.add("comment-content");
+      message.textContent = `${comment.commentContent}`;
+
+      nameContainer.append(name, commentDate);
+      commentContainer.append(nameContainer, message);
+      commentsList.prepend(commentContainer); // Prepend new comments to show the latest first
+    });
+  }
 }
 
+// Fetch and render comments initially
+fetchComments().then(() => {
+  renderComment();
+});
 
 
-// function validateCommentForm() {
-//   const isNameValid = nameComment.value.trim() !== "";
-//   const isCommentValid = comment.value.trim() !== "";
 
-//   const isFormValid = isNameValid && isCommentValid;
-//   const submitButton = document.getElementById("submit-comment");
-//   submitButton.disabled = !isFormValid;
-// }
 
-// commentName.addEventListener("input", validateCommentForm);
-// commentContent.addEventListener("input", validateCommentForm);
