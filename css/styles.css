@@ -646,6 +646,14 @@ footer {
   color: var(--clr-yellow);
 }
 
+.article-svg {
+  overflow: hidden;
+  position: absolute;
+  top: 98%;
+  left: 0;
+  z-index: -100;
+}
+
 
 .article-bot-flex {
   display: flex;

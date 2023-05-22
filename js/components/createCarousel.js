@@ -16,7 +16,7 @@ async function fetchPosts() {
 }
 
 function createPostHTML(image, title, subHeader, formattedDate, categoryName, altText, postId) {
-  console.log(postId);
+  
   let tagColor = "";
   switch (categoryName) {
     case "Synths":
@@ -43,7 +43,7 @@ function createPostHTML(image, title, subHeader, formattedDate, categoryName, al
         <p class="carousel-p">${subHeader}</p>
         <div class="dot-flex">
           <p class="carousel-date">${formattedDate}</p>
-          <img src="images/wavy2.png" class="wavy" alt="Yellow wavy line">
+          <img src="/assets/images/wavy2.png" class="wavy" alt="Yellow wavy line">
         </div>
       </a>
     </div>
@@ -57,9 +57,7 @@ async function createPostsHTML(posts) {
   let postHTML = "";
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
-    console.log(post)
     let postId = post.id;
-    console.log(postId) 
     let image = post._embedded["wp:featuredmedia"][0].source_url;
     let altText = post._embedded["wp:featuredmedia"][0].alt_text;
     let title = post.title.rendered;
@@ -68,7 +66,6 @@ async function createPostsHTML(posts) {
     let dateObject = new Date(dateString);
     let formattedDate = dateObject.toLocaleDateString("en-GB");
     let categoryName = post._embedded["wp:term"][0][0].name;
-    console.log(categoryName)
     postHTML += createPostHTML(image, title, subHeader, formattedDate, categoryName, altText, postId);
   }
   wrapper.innerHTML = `<i id="left" class="fa-solid fa-caret-left fa-4x arrow-left"></i>

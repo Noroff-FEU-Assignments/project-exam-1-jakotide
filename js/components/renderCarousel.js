@@ -1,7 +1,6 @@
 const renderCarousel = async () => {
   try {
     const response = await fetchPosts();
-    console.log(response);
     const carousel = document.querySelector(".carousel");
     const arrowButtons = document.querySelectorAll(".wrapper i");
     const firstCardWidth = document.querySelector(".card").offsetWidth;
@@ -20,7 +19,6 @@ const renderCarousel = async () => {
     function arrowClick(){
         arrowButtons.forEach(btn => {
           btn.addEventListener("click", () => {
-            console.log("YO")
             carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
           })
         })

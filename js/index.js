@@ -81,13 +81,11 @@ function loopIndexHTML(posts){
   for(let i = 0; i < posts.length; i++){
     const post = posts[i];
     const postId = post.id;
-    console.log(postId)
     const imgData = post._embedded["wp:featuredmedia"][0].source_url;
     let altText = post._embedded["wp:featuredmedia"][0].alt_text;
     let dateString = post.date;
     let dateObject = new Date(dateString);
     let formattedDate = dateObject.toLocaleDateString("en-GB");
-    console.log(formattedDate);
     createIndexHTML(post, imgData, altText, formattedDate, postId);
   }
 };
