@@ -2,7 +2,6 @@ const navBar = document.querySelector(".navbar");
 const navContent = document.querySelector(".nav-content");
 const navMenu = document.querySelector(".nav-ul");
 const hamburger = document.querySelector(".hamburger");
-// const bars = document.querySelector(".bar");
 
 export function navScroll(){
   document.addEventListener("scroll", () => {

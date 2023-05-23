@@ -17,6 +17,7 @@
   <script src="/js/components/hotjar.js"></script>
   <script src="/js/components/formValidation.js" defer type="module"></script>
   <script src="/js/js-pages/contact.js" defer type="module"></script>
+  <!-- Title -->
   <title>Contact | Goose</title>
 </head>
 <body>
@@ -46,40 +47,38 @@
       <p>Got any questions? Send us a message.</p>
       <img class="header-circles" src="/assets/images/headercircles.jpg" alt="Yellow circles">
     </div>
-
-      <div class="form-flex">
-        <form class="contact-form">
-          <div class="form-error-row"> 
-            <label for="firstname">First Name*</label>
-            <div class="error" id="firstNameError">Please enter your name</div>
-          </div>
-          <input type="text" id="firstname"/>
-          <div class="form-error-row">
-            <label for="email">Email*</label>
-            <div class="error" id="emailError">Please enter your email</div>
-          </div>
-          <input type="text" id="email" />
-          <div class="form-error-row">
-            <label for="subject">Subject*</label>
-            <div class="error" id="subError">Please enter minimum 15 characters</div>
-          </div>
-          <input type="text" id="subject"/>
-          <div class="form-error-row">
-            <label for="message">Message*</label>
-            <div class="error" id="textError">Please enter minimum 25 characters</div>
-          </div>
-          <textarea class="textarea" id="message" name="message"></textarea>
-          <input class="send-btn" type="submit" value="Send" />
-          <div class="successMessage">Your message has been sent!</div>
-        </form>
-      </div>
+    <!-- Contact Form -->
+    <div class="form-flex">
+      <form class="contact-form">
+        <div class="form-error-row"> 
+          <label for="firstname">First Name*</label>
+          <div class="error" id="firstNameError">Please enter your name</div>
+        </div>
+        <input type="text" id="firstname"/>
+        <div class="form-error-row">
+          <label for="email">Email*</label>
+          <div class="error" id="emailError">Please enter your email</div>
+        </div>
+        <input type="text" id="email" />
+        <div class="form-error-row">
+          <label for="subject">Subject*</label>
+          <div class="error" id="subError">Please enter minimum 15 characters</div>
+        </div>
+        <input type="text" id="subject"/>
+        <div class="form-error-row">
+          <label for="message">Message*</label>
+          <div class="error" id="textError">Please enter minimum 25 characters</div>
+        </div>
+        <textarea class="textarea" id="message" name="message"></textarea>
+        <input class="send-btn" type="submit" value="Send" />
+        <div class="successMessage">Your message has been sent!</div>
+      </form>
+    </div>
  
-    
     <a href="#" class="to-top-btn" aria-label="to-top-button">
       <i class="fa-solid fa-arrow-up"></i>
     </a>
-  </main>
-  
+  </main> 
   <!-- Footer -->
   <footer>
     <div class="footer-content">

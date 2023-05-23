@@ -24,14 +24,14 @@ const commentForm = document.querySelector(".comment-form");
 
 let comments = [];
 
-let encoded; // Declare the encoded variable
+let encoded; 
 
 commentForm.addEventListener("submit", async function (event) {
   event.preventDefault();
   try {
     const user = "wordpress.tidemand-goose.no";
     const psw = "g1w4 rM2S K8Wa z9Z5 UQsm gvry";
-    encoded = btoa(user + ":" + psw); // Assign the value to encoded
+    encoded = btoa(user + ":" + psw); 
 
     const response = await fetch(`${commentUrl}?post=${id}`, {
       method: "POST",
@@ -142,10 +142,6 @@ function renderComment() {
     });
   }
 }
-
-
-
-
 
 // Fetch and render comments initially
 fetchComments().then(() => {

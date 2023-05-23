@@ -221,8 +221,6 @@ h1 {
   font-size: 6rem;
 }
 
-
-
 .main-header p {
   color: var(--clr-white);
   font-weight: var(--fw-bold);
@@ -1131,42 +1129,42 @@ footer {
     font-size: 1.3rem; 
   }
 
-    /* About us Page */
+  /* About us Page */
 
-    .about-flex-one-p,
-    .about-flex-two-p {
-      gap: 1.2rem;
-    }
+  .about-flex-one-p,
+  .about-flex-two-p {
+    gap: 1.2rem;
+  }
 
-    .about-color-p {
-      font-size: 1.1rem;
-    }
-    
-    .about-color-p-two {
-      font-size: 1.1rem;
-    }
-
-    .about-color-p-three {
-      width: 46rem;
-      padding: 2rem 6rem;
-      margin: 45px auto 70px;
-    }
-
-    .about-regular-p {
-      font-size: .9rem;
-    }
+  .about-color-p {
+    font-size: 1.1rem;
+  }
   
-    .synth-svg {
-      left: 15%;
-      /* height: 300px; */
-      width: 270px;
-    }
-  
-    .goose-svg {
-      left: 5%;
-      top: 18%;
-      height: 240px;
-    }
+  .about-color-p-two {
+    font-size: 1.1rem;
+  }
+
+  .about-color-p-three {
+    width: 46rem;
+    padding: 2rem 6rem;
+    margin: 45px auto 70px;
+  }
+
+  .about-regular-p {
+    font-size: .9rem;
+  }
+
+  .synth-svg {
+    left: 15%;
+    /* height: 300px; */
+    width: 270px;
+  }
+
+  .goose-svg {
+    left: 5%;
+    top: 18%;
+    height: 240px;
+  }
 }
 
 @media (max-width: 57.5em) {
@@ -1254,42 +1252,42 @@ footer {
     gap: 4rem;
   }
 
-     /* About us Page */
+  /* About us Page */
 
-     .about-flex-one-p,
-     .about-flex-two-p {
-       gap: 1rem;
-       padding: 2rem;
-     }
- 
-     .about-color-p {
-       font-size: 1rem;
-     }
-     
-     .about-color-p-two {
-       font-size: 1rem;
-     }
-     
-     .three-big {
-      font-size: 1.2rem;
-     }
+  .about-flex-one-p,
+  .about-flex-two-p {
+    gap: 1rem;
+    padding: 2rem;
+  }
 
-     .about-color-p-three {
-       width: 34rem;
-       padding: 2rem 1rem;
-       font-size: 1rem;
-     }
-   
-     .synth-svg {
-       left: 13%;
-       width: 220px;
-     }
-   
-     .goose-svg {
-       left: 1%;
-       top: 18%;
-       height: 240px;
-     }
+  .about-color-p {
+    font-size: 1rem;
+  }
+  
+  .about-color-p-two {
+    font-size: 1rem;
+  }
+  
+  .three-big {
+  font-size: 1.2rem;
+  }
+
+  .about-color-p-three {
+    width: 34rem;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+  }
+
+  .synth-svg {
+    left: 13%;
+    width: 220px;
+  }
+
+  .goose-svg {
+    left: 1%;
+    top: 18%;
+    height: 240px;
+  }
 }
 
 @media (max-width: 47.5em) {
@@ -1732,6 +1730,6 @@ footer {
       padding: 1.1rem 0 0 .5rem;
     }
 
-}
+};
 
 

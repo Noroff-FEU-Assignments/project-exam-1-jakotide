@@ -9,7 +9,6 @@ import { validateNewsletter } from "../components/newsletter.js";
 toTopButton();
 navScroll();
 drawSvgPaths();
-
 hamburgerClicked();
 getPosts();
 

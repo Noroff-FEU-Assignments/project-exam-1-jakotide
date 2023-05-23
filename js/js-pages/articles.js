@@ -86,7 +86,6 @@ function createIndexHTML(post, imgData, altText, formattedDate){
   articleImageContainer.append(articleImage, postTag)
   articleContent.append(articleTitle, articleExcerpt, articleBotFlex);
   articleBotFlex.append(postDate, articleLink);
-
 };
 
 function loopIndexHTML(posts){
