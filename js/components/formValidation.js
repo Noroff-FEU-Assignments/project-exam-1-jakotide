@@ -43,6 +43,10 @@ function validateForm(event) {
 
   if (checkLength(firstName.value, 5) && checkLength(subject.value, 15) && validateEmail(email.value) && checkLength(message.value, 25)) {
     successMessage.style.display = "block";
+    firstName.value = "";
+    email.value = "";
+    subject.value = "";
+    message.value = "";
   } else {
     successMessage.style.display = "none";
   }

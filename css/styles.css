@@ -113,7 +113,7 @@ a {
   font-weight: var(--fw-regular);
 }
 
-.nav-ul li {
+.nav-ul li a {
   color: var(--clr-white);
 }
 
@@ -132,7 +132,7 @@ li {
   left: 0;
 }
 
-.nav-ul li.active {
+.nav-ul li a.active {
   color: var(--clr-yellow);
 }
 
