@@ -462,7 +462,7 @@
   background-color: var(--clr-blue);
   border: none;
   cursor: pointer;
-  border-radius: none;
+  border-radius: 0;
   -webkit-border-radius: 0;
 }
 
@@ -595,6 +595,7 @@
   background-color: var(--clr-yellow);
   padding: .7rem 2rem;
   cursor: pointer;
+  color: var(--clr-black);
 }
 
 .comment-btn:hover {
@@ -641,6 +642,12 @@
   font-size: .9rem;
   color: var(--clr-yellow);
   padding: 1.26rem 0 0 .7rem;
+}
+
+.comment-success {
+  color: var(--clr-success);
+  margin-top: 7px;
+  display: none;
 }
 
 
