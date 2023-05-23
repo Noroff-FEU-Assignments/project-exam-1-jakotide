@@ -76,6 +76,12 @@ commentForm.addEventListener("submit", async function (event) {
   }
 });
 
+function parseHTMLString(htmlString) {
+  const parser = new DOMParser();
+  const parsedHTML = parser.parseFromString(htmlString, "text/html");
+  return parsedHTML.body.textContent;
+}
+
 async function fetchComments() {
   try {
     const response = await fetch(`${commentUrl}?post=${id}`);
@@ -89,9 +95,7 @@ async function fetchComments() {
         id: item.post,
         postDate: item.date,
         nameComment: item.author_name,
-        commentContent: item.content.rendered
-          .replace(/(<([^>]+)>)/gi, "")
-          .replace(/&[a-z]+;/gi, ""),
+        commentContent: parseHTMLString(item.content.rendered),
       };
       comments.push(commentObject);
     }
