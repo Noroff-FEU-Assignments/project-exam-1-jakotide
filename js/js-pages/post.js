@@ -24,7 +24,6 @@ async function getPost() {
     const response = await fetch(postBaseUrl + postId + "?_embed");
     
     const results = await response.json();
-    console.log(results);
    
     return results;
 
@@ -97,7 +96,6 @@ async function createPostHTML() {
     postImage.classList.add("post-specific-image");
     postImage.src = post._embedded["wp:featuredmedia"][0].source_url;
     postImage.alt = post._embedded["wp:featuredmedia"][0].alt_text;
-    console.log(postImage)
 
     postImage.addEventListener("click", () => {
       showModal(post._embedded["wp:featuredmedia"][0].source_url);
@@ -167,7 +165,6 @@ async function createPostHTML() {
     }
 
     postTextOne.innerHTML = extractedContent;
-    console.log(postTextOne);
 
     postTextTwo.innerHTML = extractedContentTwo;
 

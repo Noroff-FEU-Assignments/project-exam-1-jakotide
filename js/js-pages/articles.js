@@ -96,7 +96,6 @@ for(let i = 0; i < posts.length; i++){
   let dateString = post.date;
   let dateObject = new Date(dateString);
   let formattedDate = dateObject.toLocaleDateString("en-GB");
-  console.log(formattedDate);
   createIndexHTML(post, imgData, altText, formattedDate);
 }
 };

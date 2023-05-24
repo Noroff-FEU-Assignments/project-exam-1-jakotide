@@ -381,7 +381,7 @@ footer {
 
 .news-input {
   width: 26.25rem;
-  height: 4.625rem;
+  height: 4.2rem;
   font-size: 1.4rem;
   padding-left: 10px;
   margin-bottom: 20px;
@@ -389,7 +389,7 @@ footer {
 
 .news-button {
   width: 11rem;
-  height: 4.625rem;
+  height: 4.2rem;
   background-color: var(--clr-green);
   color: var(--clr-black);
   border: none;
@@ -449,12 +449,12 @@ footer {
 
   .news-input {
     width: 24.25rem;
-    height: 4.2rem;
+    height: 4.1rem;
     font-size: 1rem;
   }
 
   .news-button {
-    height: 4.2rem;
+    height: 4.1rem;
     font-size: 1rem;
     width: 9rem;
   }
@@ -469,18 +469,6 @@ footer {
 
     .newsletter {
       flex-direction: column;
-    }
-
-    .news-input {
-      width: 24.25rem;
-      height: 4.2rem;
-      font-size: 1rem;
-    }
-  
-    .news-button {
-      height: 4.2rem;
-      font-size: 1rem;
-      width: 9rem;
     }
 }
 
@@ -504,12 +492,10 @@ footer {
   .news-input {
     width: 18rem;
     height: 3.5rem;
-    font-size: 1rem;
   }
 
   .news-button {
     height: 3.5rem;
-    font-size: 1rem;
     width: 7rem;
   }
 
@@ -533,14 +519,6 @@ footer {
 
   .news-input {
     width: 12rem;
-    height: 3.5rem;
-    font-size: 1rem;
-  }
-
-  .news-button {
-    height: 3.5rem;
-    font-size: 1rem;
-    width: 7rem;
   }
 
   .social-flex {
@@ -1112,11 +1090,7 @@ footer {
     font-size: 3.6rem;
   }
 
-  .article-tag {
-    font-size: 1.1rem;
-  }
-
-  .post-text-one,
+  /* .post-text-one,
   .post-text-two {
     font-size: .9rem;
   }
@@ -1127,7 +1101,7 @@ footer {
   
   .post-text-two p:first-child {
     font-size: 1.3rem; 
-  }
+  } */
 
   /* About us Page */
 
@@ -1186,11 +1160,6 @@ footer {
 
   h1 {
     font-size: 3.8rem;
-  }
-
-  .main-header p {
-    font-size: 1rem;
-    margin-right: 1em;
   }
 
   .header-circles {
@@ -1355,7 +1324,6 @@ footer {
   }
 
   .post-tag {
-    top: 10;
     right: 0;
   }
 
@@ -1388,13 +1356,6 @@ footer {
   .article-flex-one,
   .article-flex-two {
     width: 30em;
-  }
-
-  .post-image-two {
-    order: 2;
-  }
-  .post-text-two {
-    order: 1;
   }
 
   .post-specific-image,
@@ -1489,10 +1450,6 @@ footer {
     margin-left: 0px;
   }
 
-  .main-header p {
-    font-size: 0.9rem;
-  }
-
   .header-circles {
     width: 6.5rem;
     left: 72%;
@@ -1542,7 +1499,6 @@ footer {
   .post-specific-image,
   .post-image-two {
     width: 23em;
-    height: 350px;
   }
 
   .post-text-one,
@@ -1729,7 +1685,6 @@ footer {
       color: var(--clr-yellow);
       padding: 1.1rem 0 0 .5rem;
     }
-
-};
+}
 
 
