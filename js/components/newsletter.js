@@ -13,6 +13,7 @@ export function validateNewsletter(event){
   if (validateEmail(newsInput.value) === true) {
     newsError.style.display = "none";
     newsSuccess.style.display = "block";
+    newsInput.value = "";
   } else {
     newsError.style.display = "block";
     newsSuccess.style.display = "none";
