@@ -623,15 +623,6 @@ footer {
   color: var(--clr-yellow);
 }
 
-.article-svg {
-  overflow: hidden;
-  position: absolute;
-  top: 98%;
-  left: 0;
-  z-index: -100;
-}
-
-
 .article-bot-flex {
   display: flex;
   justify-content: space-between;
@@ -1089,19 +1080,6 @@ footer {
   .post-h1-article {
     font-size: 3.6rem;
   }
-
-  /* .post-text-one,
-  .post-text-two {
-    font-size: .9rem;
-  }
-
-  .post-text-one p:first-child {
-    font-size: 1.1rem;
-  }
-  
-  .post-text-two p:first-child {
-    font-size: 1.3rem; 
-  } */
 
   /* About us Page */
 
