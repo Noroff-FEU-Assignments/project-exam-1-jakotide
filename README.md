@@ -1,4 +1,6 @@
-# Goose
+![gs1](https://github.com/Noroff-FEU-Assignments/project-exam-1-jakotide/assets/111381232/d343942d-a919-4ac4-b35f-6f12c7da8b40)
+
+# Goose blog
 
 Project exam at Noroff. 
 
