@@ -35,8 +35,3 @@ Clone the repository
 As this is a school project, it is not open for contributions.
 
 
-## Links
-
-Latest version of this site: [goose-tidemand.netlify.app](https://goose-tidemand.netlify.app)
-
-My portfolio: [jakob-tidemand.netlify.app](https://jakob-tidemand.netlify.app)
